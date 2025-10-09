@@ -65,3 +65,24 @@ Version 1.50 consolidates all user experience refresh items captured in the `App
 - Complete final accessibility validation for departmental emo themes to confirm colour contrast and focus treatment compliance.
 - Finalise integration notes for third-party widget providers to ensure UI shell parity between internal applications and public web surfaces.
 - Publish annotated prototypes for user testing covering onboarding, analytics deep dives, and cross-device responsiveness.
+
+## Version 1.50 Governance Alignment Updates (April 2024)
+- Added adaptive home, directory, knowledge, service hub, and analytics wireframes with production-ready annotations referenced in `web_app_wireframe_changes.md`, `user_app_wireframe_changes.md`, and `Screens_Update.md`.
+- Published accessibility checklist updates including colour contrast matrix, keyboard navigation order, and ARIA guidelines captured in `Screen_update_Screen_colours.md` and `Screens_Updates_widget_functions.md`.
+- Documented service hub intake, knowledge attestation, and analytics KPI builder flows to support engineering implementation and QA alignment.
+- Linked design artefacts to governance tracker ensuring traceability between design decisions and release plan tasks; status dashboards updated in Confluence.
+
+## Application Shell Implementation Sync (30 Apr 2024)
+- Validated adaptive home grid, directory search, knowledge hub, and service hub workflow tables against implemented Vite/React screens ensuring spacing, theming tokens, and micro-interaction specs translate to production code.
+- Confirmed mobile quick-action card styling, typography scale, and navigation patterns align with React Native build-out, updating interaction notes in `ui-ux_updates/Screens_Update.md` and `user_app_wireframe_changes.md`.
+- Recorded theme toggle and safe-area behaviour decisions within design governance to keep desktop and mobile parity as code evolves.
+
+## Application Shell Implementation Sync (02 May 2024)
+- Added design notes for directory profile drawer hierarchy, pinned filter controls, and data provenance badges within `Screens_Update.md` and `Screens_Update_Logic_Flow_map.md` to mirror the new web implementation.
+- Documented knowledge hub filter chips, search affordances, and stale-state messaging inside `Screens_Update.md` and `Screen_update_Screen_colours.md`.
+- Updated mobile screen annotations (`user_app_wireframe_changes.md`, `Screens_Update.md`) with offline notice placement, widget provenance tags, and refreshed typography spacing.
+
+## Application Shell Implementation Sync (03 May 2024)
+- Captured brand governance update introducing programmatic asset synthesis for mobile icons and splash art; documented gradient, typography, and hierarchy tokens in `Screens_update_images_and_vectors.md` and `Screen_update_Screen_colours.md` to reflect generated outputs.
+- Updated design-to-engineering handover checklist to include verification of `npm run generate:assets` output against approved palettes before release candidate builds.
+- Recorded removal of legacy binary assets from the design repository, ensuring Confluence asset libraries link to the new SVG specifications.

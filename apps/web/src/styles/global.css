@@ -1,0 +1,63 @@
+:root {
+  color-scheme: light;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --surface-background: #f7f8fb;
+  --surface-foreground: #1f2430;
+  --surface-hover: rgba(0, 0, 0, 0.04);
+  --surface-color: #ffffff;
+  --sidebar-background: #fff;
+  --sidebar-foreground: #141824;
+  --sidebar-hover-background: rgba(54, 111, 255, 0.08);
+  --accent: #366fff;
+  --border: rgba(31, 36, 48, 0.12);
+  --border-subtle: rgba(31, 36, 48, 0.08);
+  --muted: rgba(31, 36, 48, 0.65);
+  --text-muted: rgba(31, 36, 48, 0.65);
+  --badge-background: rgba(54, 111, 255, 0.12);
+  background-color: var(--surface-background);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --surface-background: #0d1117;
+  --surface-foreground: #e6edf6;
+  --surface-hover: rgba(230, 237, 246, 0.08);
+  --surface-color: #161b22;
+  --sidebar-background: #161b22;
+  --sidebar-foreground: #e6edf6;
+  --sidebar-hover-background: rgba(54, 111, 255, 0.2);
+  --accent: #7b9bff;
+  --border: rgba(230, 237, 246, 0.2);
+  --border-subtle: rgba(230, 237, 246, 0.12);
+  --muted: rgba(230, 237, 246, 0.65);
+  --text-muted: rgba(230, 237, 246, 0.65);
+  --badge-background: rgba(123, 155, 255, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

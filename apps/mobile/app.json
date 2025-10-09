@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "Blackwellen Intranet",
+    "slug": "blackwellen-intranet",
+    "version": "1.50.0",
+    "orientation": "portrait",
+    "icon": "./generated-assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./generated-assets/splash.png",
+      "backgroundColor": "#0f172a",
+      "resizeMode": "cover"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.blackwellen.intranet"
+    },
+    "android": {
+      "package": "com.blackwellen.intranet",
+      "adaptiveIcon": {
+        "foregroundImage": "./generated-assets/adaptive-icon.png",
+        "backgroundColor": "#0f172a"
+      }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "00000000-0000-0000-0000-000000000000"
+      }
+    }
+  }
+}
