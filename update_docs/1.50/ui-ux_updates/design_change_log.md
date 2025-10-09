@@ -75,6 +75,7 @@ Version 1.50 modernises the Blackwellen intranet experience across web and nativ
 - Published UI kit changelog and usage guidelines within Confluence, linked to engineering Storybook references.
 - Distributed accessibility checklist, localisation playbook, and QA traceability matrix mapping user stories to screens, states, and acceptance criteria.
 - Created onboarding Loom walkthroughs for product, engineering, and support teams covering new design paradigms.
+- Authored `Screens_full_drawings.md` with ASCII redlines for the top mobile and web experiences, providing precise measurements, asset references, and interaction callouts to unblock engineering build-out without additional mockups.
 
 ## Quality Assurance Alignment
 - Visual regression baselines refreshed for top 25 screens across web and mobile prototypes.
