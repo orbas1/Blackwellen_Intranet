@@ -103,3 +103,20 @@
      3. Perform performance/load testing, failover drills, and observability validation with documented outcomes.
      4. Conduct UAT with departmental champions, triage issues, and track fixes to closure.
      5. Publish end-of-update report, changelog, training materials, release checklist, and hypercare support scripts.
+
+7. **Design System Harmonisation & Experience QA — 0%**
+   - *Goal*: Align application and web design artefacts, deliver adaptive theming, and enforce design QA guardrails for Version 1.50 experiences.
+   - *Integration Touchpoints*:
+     - **Backend**: Confirm support for widget personalisation, telemetry events, and security prompts specified in design artefacts.
+     - **Front-end**: Implement updated navigation, component states, and theme switching with responsive and accessibility validation.
+     - **User Phone App**: Extend refreshed layouts, typography, and personalisation controls to native platforms.
+     - **Database**: Store configuration metadata for partial templates, themes, and content governance rules.
+     - **API**: Provide endpoints for layout configuration, theme selection, and asset delivery with caching strategies.
+     - **Logic**: Synchronise workflow logic with revised service flows, consent journeys, and onboarding paths.
+     - **Design**: Govern tokens, component specs, accessibility audits, and documentation handover to engineering and support.
+   - *Subtasks*:
+     1. Publish unified design tokens, component inventories, and accessibility baselines covering light, dark, and emo themes.
+     2. Produce annotated prototypes for adaptive home, service hub, analytics, and settings screens across app and web.
+     3. Configure personalisation controls, partial template logic, and departmental theming playbooks.
+     4. Run design QA reviews, visual regression baselines, and accessibility audits with engineering and QA counterparts.
+     5. Deliver final design documentation, copy decks, and training materials for operations, support, and communications teams.

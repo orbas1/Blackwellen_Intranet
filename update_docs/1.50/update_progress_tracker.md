@@ -8,5 +8,6 @@
 | Service Hub & Operations Platform Build | 5 | 5 | 5 | 5 | 0 | 0 | 3 |
 | Analytics, AI, Mobile Security & Administration Enablement | 5 | 5 | 5 | 5 | 0 | 0 | 3 |
 | Quality Assurance, Release Engineering, and Change Management | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| Design System Harmonisation & Experience QA | 5 | 5 | 5 | 5 | 0 | 0 | 4 |
 
-> **Overall Release Health**: Early-stage planning complete; technical hardening and feature implementation remain largely in discovery/build setup. Security posture is improving via documentation and dependency planning, but production readiness awaits completion of downstream tasks and validation.
+> **Overall Release Health**: Early-stage planning complete; technical hardening, feature implementation, and design harmonisation remain largely in discovery/build setup. Security posture is improving via documentation and dependency planning, but production readiness awaits completion of downstream tasks, design QA, and validation.

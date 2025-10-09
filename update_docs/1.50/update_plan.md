@@ -97,7 +97,24 @@
      4. Stand up RBAC console, audit log viewer, integration credential vault, and security posture dashboards.
      5. Launch investment management module with holdings tracker, maker-checker workflow, and treasury exports.
 
-6. **Quality Assurance, Release Engineering & Change Management — 0%**
+6. **Design System Harmonisation & Experience QA — 0%**
+   - *Description*: Align application and web design artefacts, integrate adaptive themes, and establish design QA guardrails across experiences informed by `Application_Design_Update_Plan` and `Web_Application_Design_Update`.
+   - *Integration Coverage*:
+     - **Backend**: Validate feasibility of widget personalisation, telemetry hooks, and security annotations required by design.
+     - **Front-end**: Implement updated navigation, component states, and theme switching with visual regression coverage.
+     - **User Phone App**: Extend refreshed layouts, typography, and personalisation controls to native clients.
+     - **Database**: Ensure content management and configuration schemas support partial templates and theme metadata.
+     - **API**: Expose configuration endpoints for layout composition, theme selection, and asset delivery.
+     - **Logic**: Update workflow logic to match revised service flows, onboarding journeys, and consent checkpoints.
+     - **Design**: Govern tokens, component specifications, accessibility compliance, and documentation handover.
+   - *Subtasks*:
+     1. Publish unified design tokens, component inventories, and accessibility baselines covering light, dark, and emo themes.
+     2. Deliver annotated layouts and prototypes for adaptive home, service hub, and analytics screens across application and web.
+     3. Configure personalisation controls, partial template structures, and departmental theming playbooks.
+     4. Coordinate design QA reviews, visual regression baselines, and accessibility audits ahead of feature acceptance.
+     5. Provide release-ready design documentation, copy decks, and training kits for support and operations teams.
+
+7. **Quality Assurance, Release Engineering & Change Management — 0%**
    - *Description*: Execute exhaustive testing (unit, integration, E2E, performance, security), compile reports, complete documentation, and manage release/change activities.
    - *Integration Coverage*:
      - **Backend**: Automated unit/integration suites, contract tests, load tests.
@@ -117,7 +134,8 @@
 ## Risk & Mitigation Summary
 - **Documentation Gaps**: Mitigated by Task 1 deliverables and milestone reviews ensuring all squads publish artifacts before build sign-off.
 - **Integration Complexity**: Addressed through architecture alignment (Task 2) and telemetry instrumentation (Tasks 3–5) to provide observability.
-- **Security Exposure**: Managed via dependency governance, credential cleanup, mobile hygiene, and dedicated security testing runs in Tasks 2, 5, and 6.
+- **Security Exposure**: Managed via dependency governance, credential cleanup, mobile hygiene, and dedicated security testing runs in Tasks 2, 5, and 7.
+- **Design Variability & Theming Risks**: Reduced through Task 6 governance of tokens, partial templates, and accessibility audits across all theme variants.
 - **Timeline Pressure**: Sequenced milestones with clear dependencies and progress tracking to keep feature and remediation efforts aligned.
 
 ## Deliverables & Reporting
