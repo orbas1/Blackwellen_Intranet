@@ -21,6 +21,10 @@
 
   **Progress Update (02 May 2024)**: Directory profile drawer, knowledge filters, and offline notices reflected in updated wireframes; analytics console flows remain in review pending telemetry instrumentation.
 
+  **Progress Update (06 May 2024)**: Adaptive home personalisation drawer, drag-and-drop orchestration, quick action governance, and offline provenance messaging documented across screen specs with updated accessibility guidance for keyboard-driven reordering.
+
+  **Progress Update (07 May 2024)**: Service hub catalog filters, SLA telemetry sidebar, attachment validation messaging, and knowledge support patterns captured across wireframes, logic flows, and readiness checklists to guide the new intake wizard implementation.
+
 3. **Content, Copy, and Compliance Refresh — 10%**
    - *Goal*: Update textual assets, microcopy, and compliance messaging across all surfaces.
    - *Subtasks*:

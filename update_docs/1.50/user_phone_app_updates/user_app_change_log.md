@@ -5,6 +5,7 @@
 - Directory module adopts React Query backed caching, offline banners, and richer metadata (skills, contact options).
 - Knowledge hub incorporates debounced search, category/status filtering, and offline transparency cues.
 - Service hub workflow health view mirrors SLA, queue depth, and data-source warnings from the web experience.
+- Added breach-rate, backlog trend, and average completion telemetry to mobile workflow cards to stay in lockstep with the enhanced web catalog.
 - Global theming continues to respect system preference while powering safe-area aware layouts and typography.
 
 ## Platform-Specific Notes

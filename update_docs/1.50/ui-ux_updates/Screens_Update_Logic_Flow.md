@@ -2,19 +2,19 @@
 
 ## Adaptive Home Personalisation Flow
 1. User opens adaptive home dashboard.
-2. System loads widget configuration via `WidgetCompositionService` respecting `DIRECTORY_V2` and `ADAPTIVE_HOME_PREVIEW` flags.
-3. User selects `Customize` → modal lists available widgets with descriptions and data sources.
-4. User drags widget to layout slot; client updates layout preview and sends patch request.
-5. Server persists configuration, rehydrates layout, triggers analytics event `widget.layout.updated`.
-6. Confirmation toast appears; accessibility note: focus returns to widget header and announcement triggers via ARIA live region.
+2. System loads widget configuration and quick action set from `WidgetCompositionService`, applying persisted preferences (`DIRECTORY_V2`, `ADAPTIVE_HOME_PREVIEW`) and data view mode (`live`/`cached`).
+3. User selects `Manage layout` or `Manage quick actions`; slide-out personalisation drawer lists widgets, density options, data freshness toggle, and quick action catalogue with provenance notes.
+4. User drags widget to layout slot or toggles visibility; client updates layout preview, announces change via ARIA live region, and queues telemetry event `widget.layout.updated`.
+5. System persists configuration, rehydrates layout, and emits telemetry payload (widget order, density, view mode, quick link set).
+6. Drawer closes; confirmation banner summarises the update while focus returns to originating control.
 
 ## Service Request Submission Flow
-1. User selects `Submit Request` from Service Hub.
-2. Intake wizard collects details; each step validates fields and shows SLA indicator.
-3. On submit, request persisted via `/api/v2/service-hub/requests`; asynchronous job enriches data.
-4. Success screen displays reference ID, expected response time, and next steps.
-5. Workflow events notify approvers; approval modal accessible from request timeline.
-6. Users can escalate or cancel from timeline with audit logging.
+1. User searches or filters the service catalog; selecting a template loads SLA telemetry, readiness checklist, and recommended knowledge articles.
+2. Details step captures summary, urgency, date targets, and dynamic fields with inline validation and accessibility announcements for errors.
+3. Attachments step enforces required documents, validates shareable links, and highlights acceptable file types before continuing.
+4. Review step collates captured data, highlights outstanding validation items, and surfaces manager notification toggle prior to submission.
+5. Submission posts to `/api/v2/service-hub/requests` with offline fallback queuing; success banner returns reference ID, ETA, and source (live vs cached).
+6. Workflow telemetry updates the health dashboard; approvers receive notifications and can drill into the approval modal from the operations queue.
 
 ## Knowledge Attestation Flow
 1. Compliance team publishes updated policy; flagged as mandatory with due date.

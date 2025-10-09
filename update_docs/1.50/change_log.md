@@ -14,6 +14,8 @@
 
 ## Frontend & Design Highlights
 - Documented adaptive home widget grid, directory search experience, knowledge hub, service hub portal, analytics console, and admin console updates.
+- Upgraded adaptive home experience with drag-and-drop widget personalisation, density controls, telemetry instrumentation, offline provenance banners, and quick action management aligned to design artefacts.
+- Rebuilt the service hub portal with a filterable service catalog, SLA-aware intake wizard, offline submission fallback, and contextual knowledge suggestions stitched into workflow telemetry.
 - Updated design system tokens, accessibility guidelines, and logic flows; progress reflected across design trackers and milestones.
 - Introduced preference management context, directory virtualization, enriched knowledge filters, and global error handling in the intranet web client to support production data volumes and resilience expectations.
 
