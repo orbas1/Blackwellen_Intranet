@@ -1,0 +1,169 @@
+.container {
+  position: relative;
+  min-width: 16rem;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  background: var(--surface-color);
+  color: inherit;
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  min-height: 3.25rem;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.trigger:hover {
+  background: var(--surface-hover);
+}
+
+.trigger:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.triggerContent {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.swatches {
+  display: inline-flex;
+  gap: 0.25rem;
+}
+
+.swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+}
+
+.triggerLabel {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
+.triggerMeta {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+  line-height: 1.2;
+}
+
+.chevron {
+  opacity: 0.6;
+  transition: transform 0.2s ease;
+}
+
+.trigger[aria-expanded='true'] .chevron {
+  transform: rotate(180deg);
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background: var(--surface-color);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow-elevation);
+  padding: 0.25rem 0;
+  width: 20rem;
+  max-width: 80vw;
+  z-index: 24;
+}
+
+.option {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  align-items: center;
+  border: none;
+  width: 100%;
+  background: transparent;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
+}
+
+.option:hover,
+.option:focus-visible {
+  background: var(--surface-hover);
+  outline: none;
+}
+
+.option[data-selected='true'] {
+  background: var(--badge-background);
+}
+
+.optionSwatches {
+  display: inline-flex;
+  gap: 0.25rem;
+}
+
+.optionSwatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+}
+
+.optionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.optionLabel {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.optionDescription {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.2;
+}
+
+.optionDivider {
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 0 1rem;
+}
+
+@media (max-width: 640px) {
+  .container {
+    min-width: 0;
+  }
+
+  .trigger {
+    min-height: 3rem;
+  }
+
+  .triggerContent {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+  }
+
+  .swatches {
+    display: none;
+  }
+
+  .menu {
+    left: 0;
+    right: auto;
+    width: min(22rem, 90vw);
+  }
+}

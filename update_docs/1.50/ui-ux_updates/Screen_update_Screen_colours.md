@@ -31,6 +31,7 @@ color.analytics.chart.primary = #2155FF
 color.analytics.chart.secondary = #1F8A70
 color.analytics.chart.alert = #DB3A3A
 ```
+- Runtime token mapping implemented in `apps/web/src/styles/themes.ts` to synchronise light, dark, emo, and high-contrast palettes with persisted user preferences.
 
 ## Dark Mode Considerations
 - Backgrounds invert to `#121A24` with secondary surfaces `#1E2A38`.

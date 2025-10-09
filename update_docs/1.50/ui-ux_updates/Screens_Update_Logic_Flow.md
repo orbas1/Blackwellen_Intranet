@@ -8,6 +8,13 @@
 5. System persists configuration, rehydrates layout, and emits telemetry payload (widget order, density, view mode, quick link set).
 6. Drawer closes; confirmation banner summarises the update while focus returns to originating control.
 
+## Theme & Contrast Switching Flow
+1. User activates the theme switcher button in the global header; menu opens with focus on the current theme.
+2. Arrow/Home/End keys cycle options (Aurora Light, Midnight Dark, Twilight, Ember, Tide, High Contrast) while description text updates via `aria-live` to confirm accent usage and accessibility notes.
+3. Selecting an option persists preference via `PreferenceProvider`, applies token set from `themes.ts`, updates document colour-scheme, and emits telemetry `personalisation.theme.selected` with theme id and device context.
+4. Double-clicking the trigger or pressing Ctrl/⌘ + Enter cycles to the next theme for power users; action recorded via `personalisation.theme.cycled` event.
+5. Menu closes, focus returns to trigger, and success toast summarises the active theme when High Contrast is enabled to reinforce accessibility mode change.
+
 ## Service Request Submission Flow
 1. User searches or filters the service catalog; selecting a template loads SLA telemetry, readiness checklist, and recommended knowledge articles.
 2. Details step captures summary, urgency, date targets, and dynamic fields with inline validation and accessibility announcements for errors.

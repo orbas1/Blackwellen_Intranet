@@ -19,6 +19,7 @@
 - Introduced analytics control tower route with KPI grids, SVG trend visualisation, alert acknowledgement workflow, report schedule governance, AI assistant recommendations, and security posture dashboards.
 - Updated design system tokens, accessibility guidelines, and logic flows; progress reflected across design trackers and milestones.
 - Introduced preference management context, directory virtualization, enriched knowledge filters, and global error handling in the intranet web client to support production data volumes and resilience expectations.
+- Implemented runtime theming orchestration delivering light, dark, emo (Twilight, Ember, Tide), and high-contrast variants with persisted preferences, accessibility-compliant focus/fallback styling, and an adaptive theme switcher embedded in the global navigation.
 
 ## Mobile Highlights
 - Captured Android, iOS, and PWA release updates with build metadata, feature summaries, technical changes, testing, and rollout steps.
@@ -30,6 +31,16 @@
 ## Compliance & Communication
 - Communication templates distributed to partners and internal teams; partner certification plan established with monitoring and escalation paths.
 - Readiness dashboard notes recorded for dependencies, risks, and mitigation actions.
+
+## Quality Assurance & Release Engineering
+- Published Version 1.50 master test plan detailing environment readiness, automation scripts, and coverage expectations across backend, frontend, mobile, database, security, and accessibility domains.
+- Executed QA Wave 1 with PHPUnit/Pest suites, Newman contract verification, k6 load testing, Lighthouse audits, Chromatic regression, Detox device matrix, and credential scrub validation; findings tracked in `QA-V150`.
+- Produced QA execution report with outstanding action register, evidence pack references, and Wave 2 priorities for failover drills and OWASP ZAP scans.
+- Drafted release readiness pack including deployment checklist, hypercare roster, and training syllabus circulated to PMO and departmental champions.
+- Added security automation script (`security_scan.sh`) with Snyk, Trivy, and Gitleaks orchestration plus detailed remediation log covering npm, composer, IaC, and OWASP ZAP findings.
+- Published k6 load script targeting service hub workflows with performance and failover metrics (p95 latency, error rate, PostgreSQL replication lag) and recorded results demonstrating compliance with SLOs.
+- Logged UAT session outcomes and conditional approvals, integrating DocuSign evidence and mitigation plans for Finance export enhancement (`UAT-215`).
+- Finalised release and hypercare plan specifying deployment window, feature flag rollout sequencing, staffing roster, communications cadence, and exit criteria.
 
 ## Architecture & Data Readiness Hardening
 - Published enterprise dependency matrix with remediation workflow, security scan actions, and upgrade cadence covering backend, frontend, mobile, data, observability, and security platforms (`dependency_updates.md`).

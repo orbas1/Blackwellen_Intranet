@@ -26,6 +26,7 @@ This design plan aligns the provider, user, and web applications with the Versio
 - Roll out adaptive navigation patterns with mega menus, contextual breadcrumbs, and persona-specific quick actions based on `Organisation_and_positions` and `Screens_Update.md`.
 - Reconfigure home, directory, knowledge, and service hub layouts using modular sections from `Screens_Update_Plan.md`, enabling partial updates without full page rebuilds.
 - Introduce flexible sidebar and widget rails that can be toggled per role or department using configuration parameters defined in `Screens_Updates_widget_functions.md`.
+- Deploy navigation-level theme and contrast controls with persisted preferences, quick-cycle shortcuts, and analytics-friendly telemetry (`ThemeSwitcher.tsx`, `Screens_Update.md`) so accessibility and campaign variants remain user-driven rather than admin overrides.
 
 ### Component & Interaction Model
 - Standardise card, button, and form behaviours, referencing `Cards.md`, `Screen_buttons.md`, and `Forms.md` to ensure consistent states, loading patterns, and error handling.
@@ -53,6 +54,7 @@ This design plan aligns the provider, user, and web applications with the Versio
 ## Web Experience Plan
 ### Theming & Layout Architecture
 - Deploy the expanded SCSS/CSS token set (`Scss.md`, `Css.md`) to support light, dark, emo, and high-contrast modes with runtime switching and persisted user preferences.
+- Surface the theme switcher pattern globally within the web shell, ensuring parity with native clients and aligning persistence rules with `PreferenceProvider` telemetry expectations.
 - Reconstruct home and landing pages using modular slots defined in `Home page components.md`, `pages.md`, and `pages_list.md`, enabling marketing and operations teams to update content without developer involvement.
 - Implement partial template rendering for microsites and departmental home pages, ensuring compatibility with the global navigation frame and analytics instrumentation.
 
@@ -83,6 +85,8 @@ This design plan aligns the provider, user, and web applications with the Versio
 - **Testing Artefacts**: Supply reference snapshots and accessibility scripts for automated visual regression and contrast testing.
 - **Documentation**: Maintain living documentation for each component, including usage guidelines, accessibility notes, and integration examples.
 - **Analytics Verification Kit**: Deliver annotated datasets, filter mappings, and alert acknowledgement scripts so QA can validate the deterministic mock analytics service and cross-platform parity with the React Native analytics screen.
+- **QA Evidence Mapping**: Link every critical screen to QA artefacts (Chromatic build IDs, Lighthouse report paths, Detox artifact directories) and Playwright coverage expectations documented in `update_docs/1.50/test_plan.md` so that release sign-off references explicit design acceptance evidence.
+- **UAT Facilitation**: Provide script cards capturing success metrics, tone guidance, and accessibility prompts enabling departmental champions to validate experiences against the approved design baselines during UAT waves.
 
 ---
 

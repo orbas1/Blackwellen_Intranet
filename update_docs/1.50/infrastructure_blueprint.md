@@ -36,13 +36,14 @@
 
 ## 5. Disaster Recovery & Business Continuity
 1. **Scenario Planning**
-   - Conducted tabletop exercise for regional outage (eu-west-1). Verified DNS failover via Route53 health checks and automated ArgoCD sync to standby cluster.
-   - Validated RPO/RTO: < 5 minutes data loss, < 45 minutes service restoration.
+ - Conducted tabletop exercise for regional outage (eu-west-1). Verified DNS failover via Route53 health checks and automated ArgoCD sync to standby cluster.
+ - Validated RPO/RTO: < 5 minutes data loss, < 45 minutes service restoration.
+  - 10 May 2024: Executed live PostgreSQL primary failover in `preprod-blue` while sustaining 30 req/s workflow traffic; recovery completed in 46 seconds with automated read replica promotion and application reconnect validation via k6 canary scenario.
 2. **Backup Validation**
    - PostgreSQL WAL replay tested weekly using staging clone; automated script `scripts/pg-wal-verify.sh` emails results to Data Engineering distribution list.
    - Redis snapshot restoration rehearsed monthly; ensures TTL metadata preserved for session store.
 3. **Runbooks & Ownership**
-   - DR Runbook `ops/runbooks/dr-playbook-v150.md` lists contact tree, failover steps, rollback guidance, and communication templates.
+  - DR Runbook `ops/runbooks/dr-playbook-v150.md` lists contact tree, failover steps, rollback guidance, and communication templates; updated 10 May with `pg_autoctl` command sequence, verification SQL (`SELECT pg_is_in_recovery()`), and Grafana dashboard checks.
    - Business continuity owner: Operations Manager (Jane Howard). Deputy: SRE Lead (Miguel Santos).
 
 ## 6. Implementation Timeline & Checkpoints
@@ -58,4 +59,4 @@
 - **ArgoCD Capacity:** Additional 2 vCPU/4 GiB requested via infrastructure ticket `INFRA-221` to handle manifest diff load. *Due*: 02 May 2024.
 - **PostgreSQL Logical Replication Load:** Performance testing indicates 15% CPU increase during dry run. *Mitigation*: schedule run during off-peak (02:00 UTC) and provision burstable compute nodes.
 
-> **Status Summary (29 Apr 2024):** Dependency matrix approved, CI/CD changes merged to main, ArgoCD rollouts in staging. Pending production promotion after Keycloak upgrade sign-off.
+> **Status Summary (10 May 2024):** Dependency matrix approved, CI/CD changes merged to main, ArgoCD rollouts in staging and production. Keycloak upgrade completed, preprod failover drill executed successfully, and DR runbooks refreshed with new verification steps.

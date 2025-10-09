@@ -68,6 +68,7 @@ The web styling refresh extends the unified design language across dashboards, s
 - Refresh Storybook documentation for new states and responsive behaviours with interactive controls and accessibility annotations.
 - Expand visual regression suite (Percy/Loki) to cover adaptive home, service intake, analytics console, investment dashboard, admin feature flag screens, and assistant sidebar.
 - Provide code snippets for token consumption in React (styled-components/Tailwind) and CSS Modules to ensure consistent adoption.
+- Document runtime theme registry (`apps/web/src/styles/themes.ts`) and navigation theme switcher interactions so engineering teams implement persisted preferences, high-contrast focus states, and telemetry hooks consistently across shell components.
 - Coordinate with frontend devs to apply tokens within component library and deprecate legacy colour classes by Sprint 7.
 
 ## Open Issues & Follow-Up

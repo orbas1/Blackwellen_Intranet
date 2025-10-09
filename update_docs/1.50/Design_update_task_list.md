@@ -27,6 +27,10 @@
 
   **Progress Update (09 May 2024)**: Analytics control tower documentation completed with dataset/timeframe/segment filters, alert acknowledgement flows, reporting schedule governance, AI assistant scripts, and security posture summaries across web and mobile artefacts; progress trackers, task lists, and design plans updated accordingly.
 
+  **Progress Update (QA Sync 09 May 2024)**: Linked design QA checklist with new master test plan, mapped Chromatic/Lighthouse/Detox artefacts to screen annotations, and distributed UAT facilitation scripts so departmental champions evaluate experiences against approved design baselines during Wave 1.
+
+  **Progress Update (11 May 2024)**: Navigation-level theme switcher blueprint finalised with persisted preference behaviour, high-contrast focus affordances, and telemetry notes so engineering can align `ThemeSwitcher.tsx` implementation with accessibility and analytics commitments across web and native clients.
+
 3. **Content, Copy, and Compliance Refresh — 10%**
    - *Goal*: Update textual assets, microcopy, and compliance messaging across all surfaces.
    - *Subtasks*:
@@ -35,14 +39,14 @@
      3. Align typography usage with revised scales and truncation behaviours to preserve readability. ✅ Completed — applied in `Screens_Update.md` and design tokens.
      4. Coordinate legal, privacy, and security reviews before publishing final copy packages. ⚪ Not Started — meeting scheduled Week 4.
 
-4. **Theming & Personalisation Enablement — 15%**
+4. **Theming & Personalisation Enablement — 35%**
    - *Goal*: Deliver adaptive theme variants, emo themes, and personalisation controls.
    - *Subtasks*:
      1. Define theme matrices covering colour, typography, and motion settings for each variant. ✅ Completed — `Screen_update_Screen_colours.md` updated.
      2. Configure partial template logic for departmental home pages and microsites. 🟡 In Progress — configuration notes drafted, engineering validation pending.
      3. Design personalisation controls for layout toggles, widget pinning, and theme switching. ✅ Completed — captured in `Screens_Update.md` and logic flows.
-     4. Conduct accessibility validation for all themes, addressing contrast, focus, and animation preferences. 🟡 In Progress — Chromatic regression tests queued; analytics filter keyboard paths added to audit scope.
-     5. Publish implementation guidance for engineers, including token mappings and runtime switching patterns. ⚪ Not Started — targeted for Week 4.
+    4. Conduct accessibility validation for all themes, addressing contrast, focus, and animation preferences. 🟡 In Progress — Chromatic regression tests queued; analytics filter keyboard paths added to audit scope. High-contrast focus treatments now mapped to runtime switcher specs.
+    5. Publish implementation guidance for engineers, including token mappings and runtime switching patterns. ✅ Completed — `themes.ts` registry and `ThemeSwitcher.tsx` usage notes documented with persistence rules and telemetry hooks.
 
 5. **Asset & Media Optimisation — 10%**
    - *Goal*: Curate performant imagery, vectors, and iconography aligned to new experiences.
@@ -57,9 +61,9 @@
    - *Subtasks*:
      1. Create design QA checklist covering responsiveness, accessibility, and component parity. ✅ Completed — referenced in `Screens_Update.md` testing section.
      2. Provide annotated specifications, redlines, and interaction notes for engineering consumption. ✅ Completed — distributed via Figma handoff kit.
-     3. Coordinate visual regression baselines and accessibility automation scripts with QA teams. 🟡 In Progress — automation scripts in development with new analytics filter/tab journeys included.
+     3. Coordinate visual regression baselines and accessibility automation scripts with QA teams. ✅ Completed — Chromatic snapshot catalogue cross-referenced with QA automation pack; Lighthouse/axe thresholds embedded in master test plan.
      4. Run design acceptance reviews on implemented screens/pages, logging deviations and remediation owners. ⚪ Not Started — dependent on engineering builds.
-     5. Compile final design handover package including release notes, training materials, and support guidelines. ⚪ Not Started.
+     5. Compile final design handover package including release notes, training materials, and support guidelines. 🟡 In Progress — release readiness pack now includes UAT scripts, QA evidence mapping, and hypercare briefing notes awaiting final video captioning.
 
 7. **Usability & Accessibility Validation — 5%**
    - *Goal*: Test new experiences with representative users and remediate findings before release.

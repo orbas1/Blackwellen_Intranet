@@ -20,21 +20,7 @@
 .actions {
   display: flex;
   align-items: center;
-  gap: 1rem;
-}
-
-.themeToggle {
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 0.35rem 1rem;
-  color: inherit;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.themeToggle:hover {
-  background: var(--surface-hover);
+  gap: 1.25rem;
 }
 
 .avatar {

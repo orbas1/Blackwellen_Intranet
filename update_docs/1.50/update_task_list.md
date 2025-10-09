@@ -111,12 +111,18 @@
      - **API**: Contract validation, load testing, penetration testing, rate-limit enforcement.
      - **Logic**: Workflow simulations, SLA breach testing, escalation/resolution validation.
      - **Design**: Content QA, guided tour verification, design system compliance checks.
-   - *Subtasks*:
+ - *Subtasks*:
      1. Draft master test plan, automation scripts, and environment readiness checklist across all layers.
      2. Execute security scans (Snyk/Dependabot), penetration tests, credential scrubs, and remediation tracking.
      3. Perform performance/load testing, failover drills, and observability validation with documented outcomes.
      4. Conduct UAT with departmental champions, triage issues, and track fixes to closure.
      5. Publish end-of-update report, changelog, training materials, release checklist, and hypercare support scripts.
+
+  **Progress Update (11 May 2024)**: Security automation orchestrated via `security_scan.sh` (Snyk, Trivy, Gitleaks, OWASP ZAP)
+  with remediation log captured in security results pack. k6 performance suite + failover drill validated service hub SLAs (p95
+  < 600 ms, failover 46 s) with evidence stored in performance dossier. UAT Waves 1–2 completed with DocuSign sign-offs and
+  Finance conditional approval tracked in `UAT-215`. Release & hypercare plan finalised with deployment sequencing, feature
+  flag rollout, staffing roster, and communications cadence.
 
 7. **Design System Harmonisation & Experience QA — 0%**
    - *Goal*: Align application and web design artefacts, deliver adaptive theming, and enforce design QA guardrails for Version 1.50 experiences.
@@ -134,3 +140,5 @@
      3. Configure personalisation controls, partial template logic, and departmental theming playbooks.
      4. Run design QA reviews, visual regression baselines, and accessibility audits with engineering and QA counterparts.
      5. Deliver final design documentation, copy decks, and training materials for operations, support, and communications teams.
+
+  **Progress Update (11 May 2024)**: Runtime theme registry and navigation-level switcher shipped with persisted preference rules, high-contrast focus treatments, and telemetry hooks. Design artefacts updated (`Screens_Update.md`, `Colours.md`, `Design_Plan.md`) to guide engineering handoff and ensure parity with mobile theme governance ahead of accessibility regression runs.

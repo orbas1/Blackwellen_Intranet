@@ -84,6 +84,7 @@
        - Publish updated changelog, end-of-update report, user documentation, and training assets.
        - Conduct pilot rollout, capture feedback, and adjust configuration before full launch.
        - Establish hypercare plan with monitoring dashboards, support scripts, and issue escalation workflows.
+     - **Status Update (09 May 2024)**: Wave 1 QA execution complete with master test plan, environment readiness checklist, security scans, load tests, accessibility audits, Detox matrix, and UAT kick-off sign-offs captured. Release readiness pack (checklist, hypercare roster, training syllabus) drafted; pending OWASP ZAP scan and preprod failover drill in Wave 2.
 
 ## Milestone 6: Design System Harmonisation & Experience Readiness (Target: Week 11) — 20%
 - **Objective**: Complete design system updates, theming rollout, and design QA to ensure UI/UX parity across applications and web surfaces.
