@@ -81,3 +81,17 @@
        - Publish updated changelog, end-of-update report, user documentation, and training assets.
        - Conduct pilot rollout, capture feedback, and adjust configuration before full launch.
        - Establish hypercare plan with monitoring dashboards, support scripts, and issue escalation workflows.
+
+## Milestone 6: Design System Harmonisation & Experience Readiness (Target: Week 11) — 20%
+- **Objective**: Complete design system updates, theming rollout, and design QA to ensure UI/UX parity across applications and web surfaces.
+- **Tasks**:
+  1. **Task 6.1 — Token, Component, and Theme Finalisation**
+     - Subtasks:
+       - Publish unified design tokens and component specifications for application and web ecosystems.
+       - Validate theme variants (light, dark, emo, departmental) through accessibility and performance reviews.
+       - Document partial template governance, including microsite and departmental homepage patterns.
+  2. **Task 6.2 — Design QA & Release Support**
+     - Subtasks:
+       - Execute design QA sprints covering adaptive home, service hub, analytics, and settings experiences.
+       - Coordinate usability and accessibility remediation with engineering and QA teams.
+       - Deliver final design documentation, copy decks, and training materials to operations and support teams.
