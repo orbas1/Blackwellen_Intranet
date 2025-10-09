@@ -1,0 +1,24 @@
+# Profile Page Styling Tokens
+
+## Color Usage
+- Banner gradient: `linear-gradient(135deg, #112B4C 0%, #1F8A70 100%)`.
+- Detail cards: background #FFFFFF, border #E2E8F0, hover elevate.
+- Status badge colors: Active (#27A985), Pending (#F6B73C), Suspended (#C53030).
+
+## Typography
+- Name: 32px Satoshi SemiBold, 0.02em tracking.
+- Role: 18px Satoshi Medium, color #475569.
+- Labels: 14px Satoshi Medium uppercase with 0.12em tracking.
+
+## Spacing
+- Banner bottom margin 96px to accommodate overlapping avatar.
+- Section spacing 48px vertical, 32px between cards.
+
+## Buttons
+- Edit Profile: Secondary outline variant.
+- Message: Primary gradient.
+
+## Responsive Behavior
+- On mobile, avatar reduces to 96px and centers; action buttons stack below with 12px spacing.
+- Tabs convert to horizontal scroll list with sticky top.
+
