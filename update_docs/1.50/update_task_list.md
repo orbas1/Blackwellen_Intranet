@@ -18,6 +18,7 @@
      3. Refresh UX wireframes, component specs, and accessibility checklists reflecting provider removal.
      4. Release API schema update packs (OpenAPI/GraphQL), client migration guides, and communication templates.
      5. Prepare mobile release playbooks (notes, build IDs, localisation plan) with monitoring expectations.
+   - **Progress Update (24 Apr 2024)**: Completed. Governance pack, backend/API documentation, design artefacts, communication templates, and mobile release playbooks delivered with production-ready detail.
 
 2. **Architecture & Data Readiness Hardening — 10%**
    - *Goal*: Finalise architecture decisions, dependency upgrades, and data migration plans to mitigate issues #4–#8, #15.
@@ -35,8 +36,9 @@
      3. Complete migration dossier covering dry-run schedule, verification queries, rollback scripts, and anonymisation.
      4. Communicate ERD/data dictionary updates to analytics/BI teams and coordinate ETL adjustments.
      5. Finalise integration inventory and remediation steps for ERP, CRM, LMS, communications, and market data connectors.
+   - **Progress Update (29 Apr 2024)**: Dependency matrix, infrastructure blueprint, build pipeline guardrails, database migration dossier, factory/seed refresh, and integration inventory published with assigned owners, timelines, and risk mitigations. CAB briefed; awaiting scheduled dry runs and vendor cert renewal follow-ups.
 
-3. **Adaptive Home, Directory, and Knowledge Delivery — 5%**
+3. **Adaptive Home, Directory, and Knowledge Delivery — 45%**
    - *Goal*: Build adaptive home widgets, employee intelligence, and document/knowledge hubs defined in Feature Pillars 1–3.
    - *Integration Touchpoints*:
      - **Backend**: Widget/catalog services, HRIS sync services, document repository APIs.
@@ -53,7 +55,9 @@
      4. Develop document repository with version control, embedded previews, approval workflow, and retention policies.
      5. Launch knowledge base/wiki with markdown editor, policy library, attestation tracker, and AI tagging.
 
-4. **Service Hub & Operations Platform Build — 5%**
+  **Progress Update (02 May 2024)**: Directory now features pinned filters, virtualised rendering, and rich profile drawer; knowledge hub ships debounced search + category/status filtering; mobile clients inherit React Query caching with AsyncStorage persistence and offline notices across widgets, directory, knowledge, and service hub modules.
+
+4. **Service Hub & Operations Platform Build — 25%**
    - *Goal*: Implement cross-department service hub covering HR, IT, finance, and operations workflows per Feature Pillar 4 and issue remediation.
    - *Integration Touchpoints*:
      - **Backend**: Workflow automation engine, ticketing, asset management, expense services.
@@ -69,6 +73,8 @@
      3. Deploy IT helpdesk modules (ticketing, incident/problem, change management, asset lifecycle) with monitoring dashboards.
      4. Implement HR/Finance modules (leave tracking, expense OCR pipeline, performance reviews, onboarding/offboarding).
      5. Deliver procurement, vendor, budget dashboards and ERP synchronisation, including compliance controls.
+
+  **Progress Update (02 May 2024)**: Service hub workflow health feeds on web and mobile now expose data provenance, stale warnings, and shared offline notices while intake/approval flows remain scoped for upcoming milestone.
 
 5. **Analytics, AI, Mobile Security & Administration Enablement — 5%**
    - *Goal*: Provide analytics, AI capabilities, mobile security hardening, and administrative controls outlined in Feature Pillars 5–7 and fix suggestions.

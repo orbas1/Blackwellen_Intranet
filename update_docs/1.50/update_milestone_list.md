@@ -16,6 +16,7 @@
        - Publish API schema packages (REST/GraphQL), changelog notes, and deprecation timelines to client teams.
        - Draft mobile release notes, localisation updates, and store metadata change plan.
        - Circulate communication brief for support, operations, compliance teams with Q&A and fallback steps.
+     - **Status Update (24 Apr 2024)**: Milestone 1 tasks complete; governance artefacts, documentation packs, API notices, and mobile release playbooks published to knowledge base.
 
 ## Milestone 2: Architecture, Dependency, and Data Hardening (Target: Week 4) — 15%
 - **Objective**: Address issues #4–#8, #15 by securing architecture decisions, dependency upgrades, and database readiness.
@@ -32,6 +33,7 @@
        - Execute dry-run migrations with timing metrics and failure/rollback drills.
        - Update ERDs, data dictionaries, and downstream communication packs for analytics/ETL consumers.
        - Coordinate integration remediation (ETL, APIs, BI) and confirm security role cleanup.
+     - **Status Update (29 Apr 2024)**: Migration dossier, database change log, seed/factory refresh, and anonymisation controls documented; dry runs scheduled and ETL consumers briefed. Integration remediation tracked via `INTG-V150` board with owner assignments.
 
 ## Milestone 3: Experience Platform Delivery (Target: Week 8) — 20%
 - **Objective**: Deliver adaptive home, employee intelligence, and knowledge/document modules referenced in features pillars.

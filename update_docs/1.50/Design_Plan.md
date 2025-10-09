@@ -30,6 +30,7 @@ This design plan aligns the provider, user, and web applications with the Versio
 ### Component & Interaction Model
 - Standardise card, button, and form behaviours, referencing `Cards.md`, `Screen_buttons.md`, and `Forms.md` to ensure consistent states, loading patterns, and error handling.
 - Expand widget library to cover analytics tiles, AI prompts, and service hub trackers, ensuring each component includes telemetry hooks and fallback states.
+- Document offline messaging patterns (data provenance badges, stale warnings, connectivity banners) for directory, knowledge, and widget surfaces shared across web and mobile.
 - Embed in-product guidance and tooltips tied to the new logic flows (`Logic_Flow_map.md`, `Logic_Flow_update.md`) to steer users through complex workflows.
 
 ### Content & Visual Direction
@@ -53,6 +54,7 @@ This design plan aligns the provider, user, and web applications with the Versio
 ### Component Library Alignment
 - Align web card, button, and typography styles with application standards using `Cards.md.md`, `Colours.md`, and `text.md.md` while accommodating responsive breakpoints.
 - Define component responsibilities (`component_functions.md`, `component_types.md`) for dashboards, profile modules, and resource galleries, including data loading states and error boundaries.
+- Capture error boundary fallback treatments and profile drawer content hierarchy to maintain parity with production build behaviour.
 - Extend profile and settings designs (`Profile Styling`, `Profile Look.md`, `Settings.md`) to support custom layouts, privacy controls, and cross-device synchronisation.
 
 ### Content & Asset Strategy
@@ -68,7 +70,7 @@ This design plan aligns the provider, user, and web applications with the Versio
 ---
 
 ## Integration with Engineering & QA
-- **Design-to-Dev Handover**: Provide annotated specs, responsive breakpoints, and component props in the design system repository, linked to build tasks in the engineering backlog.
+- **Design-to-Dev Handover**: Provide annotated specs, responsive breakpoints, and component props in the design system repository, linked to build tasks in the engineering backlog. Cross-reference artefacts with the implemented `apps/web` and `apps/mobile` component libraries to enforce parity and catch deltas early.
 - **Design QA**: Establish a design QA checklist that mirrors `Design_update_progress_tracker.md` metrics, enabling joint reviews with QA to verify fidelity, usability, and accessibility.
 - **Testing Artefacts**: Supply reference snapshots and accessibility scripts for automated visual regression and contrast testing.
 - **Documentation**: Maintain living documentation for each component, including usage guidelines, accessibility notes, and integration examples.
@@ -86,7 +88,7 @@ This design plan aligns the provider, user, and web applications with the Versio
 ## Risk Mitigation
 - **Theme Complexity**: Document fallback palettes and automated contrast testing to avoid accessibility regressions when emo themes are activated.
 - **Partial Template Drift**: Implement versioning and approval workflows for partials to prevent inconsistent layouts across departments.
-- **Asset Performance**: Optimise imagery and vectors with strict file-size budgets and CDN caching strategies.
+- **Asset Performance**: Optimise imagery and vectors with strict file-size budgets and CDN caching strategies. Introduce programmatic asset synthesis for mobile icons/splash screens using approved SVG templates to avoid binary commits while maintaining brand fidelity.
 - **Cross-Platform Parity**: Run parity reviews between native and web experiences to ensure component behaviour and copy remain aligned.
 
 ---
@@ -96,3 +98,8 @@ This design plan aligns the provider, user, and web applications with the Versio
 - Accessibility compliance validated across all theme variants with zero blocking issues.
 - Positive usability scores (>80 System Usability Scale) for updated home, service, and analytics workflows.
 - Documentation coverage for 100% of net-new components and templates.
+
+## Governance Alignment Deliverables — April 2024
+- Published V1.50 wireframe suites (web, mobile) with annotated accessibility notes and telemetry markers for engineering.
+- Released updated design QA checklist mapping to release governance tasks; referenced by PMO for readiness tracking.
+- Synced design tokens and component specs with engineering Storybook repositories; includes automated sync script logs.

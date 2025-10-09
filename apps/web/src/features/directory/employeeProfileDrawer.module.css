@@ -1,0 +1,116 @@
+.drawer {
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  width: 340px;
+  max-height: calc(100vh - 2rem);
+  background: var(--surface-color);
+  border-left: 1px solid var(--border-subtle);
+  box-shadow: -12px 0 24px rgba(15, 23, 42, 0.08);
+  transform: translateX(110%);
+  transition: transform 160ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer[data-open='true'] {
+  transform: translateX(0);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.header button {
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  cursor: pointer;
+  line-height: 1;
+  color: var(--text-muted);
+}
+
+.content {
+  padding: 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.placeholder {
+  padding: 2rem;
+  color: var(--text-muted);
+}
+
+.definitionList {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.definitionList div {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.definitionList dt {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.definitionList dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.skillList,
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skillList li {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  background: var(--badge-background);
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.list li {
+  display: flex;
+  flex-direction: column;
+}
+
+.meta {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 1200px) {
+  .drawer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: min(400px, 100%);
+    height: 100vh;
+    max-height: none;
+    z-index: 12;
+  }
+}
