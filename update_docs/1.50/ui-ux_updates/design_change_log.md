@@ -45,9 +45,9 @@ Version 1.50 modernises the Blackwellen intranet experience across web and nativ
 - Offline-ready documents display sync indicator, last refreshed timestamp, and manual refresh option.
 
 ### Service Hub Portal
-- Unified intake form with stepper, SLA indicator chips, contextual help popovers, and escalation prompts. Added quick action to clone previous requests.
-- Request dashboard uses status kanban for operations teams with swimlane toggles (by priority, department, age). Added bulk action bar for assignment.
-- Approval modals include risk assessment summary, required attachments list, and comment audit trail.
+- Filterable service catalog introduces search, department chips, SLA badge legend, and request volume indicators to prioritise high-impact templates.
+- Guided intake wizard surfaces SLA telemetry, readiness checklist, knowledge recommendations, attachment validation, and offline submission fallback states.
+- Approval modals include risk assessment summary, required attachments list, and comment audit trail, while request dashboard retains kanban swimlanes with bulk assignment bar.
 
 ### Analytics & AI Console
 - KPI builder features tabbed navigation (Overview, Datasets, Alerts, AI Insights) and updated chart colour scheme for accessibility. Added “Story Mode” to narrate KPI changes over time.

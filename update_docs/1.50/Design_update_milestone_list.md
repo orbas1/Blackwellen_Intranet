@@ -18,7 +18,7 @@
   - Updated logic flow diagrams aligning user guidance, compliance checkpoints, and AI interactions.
 - **Entry Criteria**: Milestone 1 artefacts baselined; personas and journey maps validated.
 - **Exit Criteria**: Prototypes approved by stakeholders, usability testing scripts drafted, and backlog items created.
-- **Status (02 May)**: 🟢 On Track — directory profile drawer, knowledge filters, and offline notices captured in updated prototypes; analytics dashboards still under stakeholder review.
+- **Status (07 May)**: 🟢 On Track — service hub catalog + intake wizard now documented with SLA telemetry panels, knowledge support, and attachment guidance alongside prior adaptive home/knowledge updates; analytics dashboards still under stakeholder review.
 
 ## Milestone 3: Theming, Personalisation, and Asset Rollout (Target: Week 8) — 25%
 - **Objective**: Implement adaptive themes, emo variants, and asset libraries while ensuring performance and accessibility compliance.

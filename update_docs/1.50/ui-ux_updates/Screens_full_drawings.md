@@ -260,6 +260,8 @@ The following annotated wireframe drawings translate the v1.50 specifications in
 └───────────────────────────────────────────────────────────────────────────────┘
 ```
 - Validation summary appears inline at top when errors, `catalyst-500` border.
+- Sidebar displays SLA metrics panel, readiness checklist, and knowledge cards sourced from operations knowledge base.
+- Offline submission fallback banner displays below the stepper when API unavailable, referencing cached queue messaging.
 
 ### C. Service Tracker Kanban (Web)
 ```

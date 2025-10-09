@@ -3,6 +3,9 @@
 ## Adaptive Home (`/home`)
 - Responsive card grid continues to surface celebrations, compliance, insights, and workflow CTAs with clear data source labelling.
 - Widget telemetry hooks emit view/interact events and are ready for downstream analytics ingestion.
+- Added drag-and-drop widget orchestration with persisted layout order and density toggles backed by the dashboard preference store.
+- Introduced personalisation drawer enabling widget visibility, quick action curation, and live vs cached data modes with accessibility-friendly controls.
+- Surfaced offline provenance banner and manual refresh control to complement automatic polling and data freshness indicators.
 
 ## Directory (`/people`)
 - Added toolbar filters for department, location, and pinned employees with debounced search against the data set.
@@ -15,8 +18,9 @@
 - Updated typography, badge styling, and footer metadata to align with refreshed design tokens.
 
 ## Service Hub (`/service-hub`)
-- Workflow table retains SLA, queue depth, and health indicators while now exposing data provenance and stale warnings for operations teams.
-- CTA button links directly into the intake launcher, keeping cross-module navigation intact.
+- Introduced tri-column layout with department filters, search, and SLA-prioritised catalog cards that surface request volume, priority, and tag metadata.
+- Added guided intake wizard (details → attachments → review) with validation, checklist gating, offline submission fallback, and manager notification toggle backed by React Query mutations.
+- Surfaced SLA telemetry, breach rates, and trend analytics alongside contextual knowledge suggestions and intake checklists to improve submission quality.
 
 ## Global Elements
 - Navigation shell continues to present adaptive experiences with updated typography and spacing tokens from the design system refresh.

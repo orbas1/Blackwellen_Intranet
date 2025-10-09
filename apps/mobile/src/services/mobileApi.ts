@@ -38,6 +38,9 @@ export interface WorkflowSummary {
   slaHours: number;
   queueDepth: number;
   healthy: boolean;
+  breachedPercent: number;
+  backlogTrend: 'up' | 'down' | 'steady';
+  avgCompletionHours: number;
 }
 
 export interface QuickActionWidget {
@@ -108,14 +111,20 @@ const WORKFLOW_FALLBACK: WorkflowSummary[] = [
     name: 'IT Hardware Request',
     slaHours: 24,
     queueDepth: 6,
-    healthy: true
+    healthy: true,
+    breachedPercent: 4,
+    backlogTrend: 'down',
+    avgCompletionHours: 19
   },
   {
     id: 'wf-002',
     name: 'Vendor Onboarding',
     slaHours: 72,
     queueDepth: 14,
-    healthy: false
+    healthy: false,
+    breachedPercent: 22,
+    backlogTrend: 'up',
+    avgCompletionHours: 86
   }
 ];
 

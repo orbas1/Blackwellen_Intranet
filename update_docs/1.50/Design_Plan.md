@@ -30,6 +30,8 @@ This design plan aligns the provider, user, and web applications with the Versio
 ### Component & Interaction Model
 - Standardise card, button, and form behaviours, referencing `Cards.md`, `Screen_buttons.md`, and `Forms.md` to ensure consistent states, loading patterns, and error handling.
 - Expand widget library to cover analytics tiles, AI prompts, and service hub trackers, ensuring each component includes telemetry hooks and fallback states.
+- Specify service hub intake wizard behaviours (catalog filters, SLA badge legend, knowledge sidebar, offline submission fallback) to align with operations readiness requirements.
+- Specify adaptive home personalisation drawer patterns governing widget visibility, density modes, data freshness controls, quick action catalogues, and accessibility announcements for drag-and-drop interactions.
 - Document offline messaging patterns (data provenance badges, stale warnings, connectivity banners) for directory, knowledge, and widget surfaces shared across web and mobile.
 - Embed in-product guidance and tooltips tied to the new logic flows (`Logic_Flow_map.md`, `Logic_Flow_update.md`) to steer users through complex workflows.
 

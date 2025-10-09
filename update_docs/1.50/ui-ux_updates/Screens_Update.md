@@ -4,10 +4,10 @@
 Version 1.50 refreshes the adaptive home, directory, knowledge, service hub, analytics, and admin screens to remove provider references and deliver personalisation, compliance, and accessibility improvements.
 
 ## Adaptive Home
-- **Layout**: Three-column desktop grid with modular widget heights (1x, 2x) and collapsible quick action rail.
-- **Widgets**: KPI tiles, celebrations, quick links, AI insights, tasks, and knowledge spotlight. Each includes `Configure` icon with tooltip guidance.
-- **States**: Loading skeleton, empty state with CTA to add widgets, and error fallback with retry button.
-- **Accessibility**: Tab order flows left-to-right, top-to-bottom; ensures ARIA labels for widget headers and configure buttons.
+- **Layout**: Three-column desktop grid with drag-and-drop widget slots, density modes (comfortable/compact), and a persistent quick action rail managed via the personalisation drawer.
+- **Widgets**: KPI tiles, celebrations, quick links, AI insights, tasks, and knowledge spotlight. Each surfaces provenance badge, last refresh timestamp, and `Configure` icon with tooltip guidance.
+- **States**: Loading skeleton, empty state with CTA to add widgets, offline banner displaying cached snapshot provenance, and error fallback with retry button.
+- **Accessibility**: Tab order flows left-to-right, top-to-bottom; drag handles expose keyboard listeners; ARIA labels announced when widgets are reordered or toggled within the drawer.
 
 ## Employee Directory & Profiles
 - **Directory Search**: Faceted filters with pill-style chips, live result count, and pinned quick filters for "My Team" and "New Hires".
@@ -22,7 +22,9 @@ Version 1.50 refreshes the adaptive home, directory, knowledge, service hub, ana
 - **Accessibility**: Document preview supports high-contrast mode; keyboard shortcuts documented for toggling metadata and comments.
 
 ## Service Hub
-- **Request Intake**: Stepper with sections (Details → Attachments → Review) and inline SLA indicator.
+- **Request Intake**: Guided wizard (Details → Attachments → Review) with inline SLA telemetry, checklist sidebar, and validation states that call out missing attachments, dates, or routing details.
+- **Service Catalog**: Filter rail with department toggles, global search, SLA badge legend, and cards surfacing request volume, priority, tags, and last update timestamp.
+- **Knowledge Support**: Contextual knowledge list and readiness checklist persist beside the form, highlighting breach trends, average completion, and must-read articles before submission.
 - **Request Tracking**: Kanban board with swimlane toggles (Priority, Department, Age) and quick filters for overdue tasks.
 - **Approval Modal**: Includes risk summary, required attachments list, and comment history.
 - **Accessibility**: All form elements labelled; error messages include ARIA live region updates; board supports keyboard drag alternatives using move buttons.

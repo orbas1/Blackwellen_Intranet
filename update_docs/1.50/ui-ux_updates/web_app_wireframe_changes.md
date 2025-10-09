@@ -4,6 +4,7 @@
 - Established 12-column responsive grid with configurable widget rows (analytics, tasks, celebrations, knowledge spotlight).
 - Introduced persistent left rail navigation with hover states and quick-add buttons; top utility bar features search, notifications, and AI assistant entry point.
 - Added widget settings fly-out supporting density, timeframe, and data source adjustments.
+- Captured drag-and-drop handles, offline provenance banner, and quick action manager patterns to align with implemented adaptive home controls.
 
 ## Employee Intelligence Workspace
 - Designed dual-pane layout: directory filters on left, results table center, profile drawer on right with quick actions (message, schedule 1:1, view reports).
@@ -19,6 +20,7 @@
 - Intake flow uses multi-step horizontal progress bar, inline validation messages, and SLA preview card.
 - Request queue features kanban view with swimlane toggles (Priority, Department, Age) and bulk action toolbar.
 - Manager dashboard displays approval workload, SLA compliance, and escalation alerts.
+- Sidebar now hosts knowledge suggestions, readiness checklist, and telemetry summary while catalog column supports search and department chips.
 
 ## Analytics & AI Console
 - Dashboard wireframe includes KPI builder tabs, dataset selection tree, and chart preview area with annotation mode.

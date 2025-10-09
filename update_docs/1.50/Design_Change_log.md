@@ -86,3 +86,13 @@ Version 1.50 consolidates all user experience refresh items captured in the `App
 - Captured brand governance update introducing programmatic asset synthesis for mobile icons and splash art; documented gradient, typography, and hierarchy tokens in `Screens_update_images_and_vectors.md` and `Screen_update_Screen_colours.md` to reflect generated outputs.
 - Updated design-to-engineering handover checklist to include verification of `npm run generate:assets` output against approved palettes before release candidate builds.
 - Recorded removal of legacy binary assets from the design repository, ensuring Confluence asset libraries link to the new SVG specifications.
+
+## Application Shell Implementation Sync (06 May 2024)
+- Documented adaptive home drag-and-drop widget orchestration, density modes, telemetry hooks, and offline provenance messaging in `Screens_Update.md`, `Screens_Update_Logic_Flow.md`, and `Screens_Updates_widget_functions.md` to mirror production implementation.
+- Added quick action personalisation guidance and preference storage notes to `Application Design Update.md` and dashboard-related artefacts, including accessibility announcements for reorder operations.
+- Updated `Design_update_progress_tracker.md` commentary and QA checklists to cover telemetry validation, offline banner presentation, and drawer focus management introduced by the new personalisation drawer.
+
+## Application Shell Implementation Sync (07 May 2024)
+- Recorded service hub catalog filters, SLA badge taxonomy, and telemetry sidebars within `Screens_Update.md`, `Screens_Update_Logic_Flow.md`, and `web_app_wireframe_changes.md` to align engineering build with knowledge-supported intake patterns.
+- Updated `Screens_full_drawings.md` and readiness checklists to include attachment validation messaging, offline submission fallback notes, and knowledge recommendations surfaced alongside the wizard.
+- Refreshed `Design_update_progress_tracker.md` commentary to reflect improved operations milestone coverage and documented telemetry parity for mobile fallback workflows.
