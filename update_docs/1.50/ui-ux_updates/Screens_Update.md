@@ -8,6 +8,7 @@ Version 1.50 refreshes the adaptive home, directory, knowledge, service hub, ana
 - **Widgets**: KPI tiles, celebrations, quick links, AI insights, tasks, and knowledge spotlight. Each surfaces provenance badge, last refresh timestamp, and `Configure` icon with tooltip guidance.
 - **States**: Loading skeleton, empty state with CTA to add widgets, offline banner displaying cached snapshot provenance, and error fallback with retry button.
 - **Accessibility**: Tab order flows left-to-right, top-to-bottom; drag handles expose keyboard listeners; ARIA labels announced when widgets are reordered or toggled within the drawer.
+- **Theme & Contrast Control**: Global header now hosts a theme switcher surfacing Aurora Light, Midnight Dark, Twilight, Ember, Tide, and High Contrast variants. Selection persists to user preferences, supports keyboard navigation (Arrow/Home/End), exposes quick-cycle shortcut (Ctrl/⌘ + Enter), and mirrors runtime token updates documented in `themes.ts`.
 
 ## Employee Directory & Profiles
 - **Directory Search**: Faceted filters with pill-style chips, live result count, and pinned quick filters for "My Team" and "New Hires".

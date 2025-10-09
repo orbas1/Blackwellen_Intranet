@@ -27,6 +27,12 @@
                     |
                     +--> [Export Service]
 
+[Adaptive Home] ---> [Theme & Accessibility Controls]
+                    |
+                    +--> [Preference Service]
+                    |
+                    +--> [Telemetry Pipeline]
+
 [Adaptive Home] ---> [Knowledge Hub]
                     |
                     v

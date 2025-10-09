@@ -14,10 +14,10 @@ const navItems = [
 ];
 
 export function Layout() {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, setTheme, cycleTheme, themes } = useTheme();
 
   return (
-    <div className={styles.shell} data-theme={theme}>
+    <div className={styles.shell}>
       <aside className={styles.sidebar}>
         <div className={styles.brand}>Blackwellen</div>
         <nav>
@@ -33,7 +33,7 @@ export function Layout() {
         </nav>
       </aside>
       <main className={styles.main}>
-        <TopNav onToggleTheme={toggleTheme} />
+        <TopNav theme={theme} themes={themes} onSelectTheme={setTheme} onCycleTheme={cycleTheme} />
         <div className={styles.content}>
           <Suspense fallback={<div className={styles.loading}>Loading experience…</div>}>
             <Outlet />

@@ -59,6 +59,26 @@
 - `database_updates/factories_updates.md`
 - `database_updates/seeders_updates.md`
 
+## Quality Assurance & Release Engineering
+- `test_plan.md`
+- `update_tests/test_scripts/backend_test_script.md`
+- `update_tests/test_scripts/build_test.sh`
+- `update_tests/test_scripts/database_test_script.sh`
+- `update_tests/test_scripts/front_end_test_script.sh`
+- `update_tests/test_scripts/user_app_test_script.sh`
+- `update_tests/test_scripts/update_tests_report.md`
+- `update_tests/test_scripts/security_scan.sh`
+- `update_tests/test_scripts/performance_test.js`
+- `update_tests/backend_test_results.md`
+- `update_tests/front_end_test_results.md`
+- `update_tests/build_test_results.md`
+- `update_tests/user_app_test_results.md`
+- `update_tests/security_test_results.md`
+- `update_tests/performance_test_results.md`
+- `update_tests/uat_signoff_log.md`
+- `release_hypercare_plan.md`
+
 ## Application Codebase
 - `apps/web` — Adaptive intranet web portal (Vite + React + TypeScript).
+- `apps/web/src/styles/themes.ts` — Theme registry covering light/dark/emo/high-contrast palettes consumed by the runtime switcher.
 - `apps/mobile` — Expo-managed React Native companion application with generated branding assets (`scripts/generate-assets.js`).

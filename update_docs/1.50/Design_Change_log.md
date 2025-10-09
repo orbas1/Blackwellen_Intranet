@@ -10,6 +10,7 @@ Version 1.50 consolidates all user experience refresh items captured in the `App
 - **Component Inventory Refresh**: Reclassified widgets, cards, buttons, forms, and menu families (`Cards.md`, `Screen_buttons.md`, `Forms.md`, `Menus.md`) into an enterprise catalogue with documented states, accessibility criteria, and usage guardrails.
 - **Accessibility & Compliance Enhancements**: Embedded WCAG 2.2 AA checks, localisation hooks, and security status call-outs in `Screen_text.md`, `Organisation_and_positions.md`, and `Accessibility` notes to ensure consistent navigation cues and critical messaging.
 - **Theme & Layout Orchestration**: Added support for theme variants, emo themes, and partial template overrides to accommodate departmental home pages and microsites, using shared layout primitives (`Logic_Flow_map.md`, `Screens_Update_Logic_Flow_map.md`).
+- **Theme Control Runtime**: Captured navigation-level theme switcher patterns, persisted preference rules, and high-contrast accessibility treatments aligned with the production implementation in `ThemeSwitcher.tsx` and token registry updates (`Screens_Update.md`, `Colours.md`).
 
 ---
 
@@ -108,3 +109,12 @@ Version 1.50 consolidates all user experience refresh items captured in the `App
 - Captured analytics control tower behaviours—dataset/timeframe/segment filters, KPI mosaics, acknowledgement drawer, and reporting schedule toggles—across `Screens_Update.md`, `Screens_Update_Logic_Flow.md`, `web_app_wireframe_changes.md`, and `Screens_full_drawings.md` to reflect the implemented web experience.
 - Documented deterministic mock analytics datasets, alert severity colour ramps, and AI assistant insight scripts within `Design_Plan.md`, `Design_update_task_list.md`, and `Design_update_progress_tracker.md` so QA and engineering share a single source of truth.
 - Mirrored mobile analytics intelligence layouts, including highlights, alert actions, and security posture cards, inside `user_app_wireframe_changes.md` and `user_application_logic_flow_changes.md` to preserve parity with the React Native delivery.
+
+## Design QA Readiness Sync (09 May 2024)
+- Expanded design QA checklist to cover Playwright keyboard navigation tests, Lighthouse accessibility thresholds, and axe CI
+  workflows introduced in the Version 1.50 master test plan, ensuring engineering automation references design acceptance
+  criteria directly.
+- Annotated adaptive home widget, service hub wizard, and analytics console artefacts with expected audit evidence (Chromatic
+  build IDs, Lighthouse report locations, Detox artifact paths) to streamline cross-functional sign-off.
+- Published UAT facilitation notes highlighting copy tone, accessibility callouts, and success metrics so departmental
+  champions evaluate experiences against approved design baselines during Wave 1.

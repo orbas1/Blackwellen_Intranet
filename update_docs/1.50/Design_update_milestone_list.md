@@ -28,7 +28,7 @@
   - Configuration guides for modular layouts, partial templates, and widget rails.
 - **Entry Criteria**: Core layouts approved; design tokens integrated into staging environments.
 - **Exit Criteria**: Theme QA complete, asset repository published, and integration notes delivered to engineering.
-- **Status (03 May)**: 🟡 In Progress — colour matrix and accessibility tests completed; deterministic mobile asset generation in place with optimisation of analytics imagery scheduled Week 5.
+- **Status (11 May)**: 🟡 In Progress — colour matrix and accessibility tests completed; navigation-level theme switcher guidance and runtime token registry published, with deterministic mobile asset generation in place and analytics imagery optimisation scheduled Week 5.
 
 ## Milestone 4: Design QA, Documentation, and Release Readiness (Target: Week 11) — 30%
 - **Objective**: Validate build fidelity, accessibility, and compliance, and publish final documentation for launch support.
@@ -38,4 +38,4 @@
   - Final handover package including release notes, training materials, and governance checklists.
 - **Entry Criteria**: Themes and assets integrated in development builds; usability feedback addressed.
 - **Exit Criteria**: All critical issues resolved, documentation archived, and release sign-off secured from design authority.
-- **Status (24 Apr)**: ⚪ Not Started — blocked until engineering builds incorporating new layouts are available.
+- **Status (09 May)**: 🟡 In Progress — QA Wave 1 evidence mapped to design artefacts, Chromatic/Lighthouse/Detox references embedded in specs, and UAT facilitation scripts circulated. Awaiting OWASP scan outputs and asset polish to reach completion.

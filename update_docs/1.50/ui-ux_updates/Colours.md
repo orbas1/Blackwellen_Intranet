@@ -69,3 +69,4 @@
 - React Native theme uses exported JSON tokens; integrate via `@shopify/restyle`.
 - Chart library uses complementary palette `analytics_palette.json` with accessible patterns.
 - Print palette mapping includes CMYK approximations documented in `Screen_update_Screen_colours.md`.
+- Web runtime consumes shared registry at `apps/web/src/styles/themes.ts`, ensuring persisted preferences and high-contrast variants map to the same token IDs surfaced in design documentation.
