@@ -19,6 +19,7 @@ export function HomeScreen({ navigation }: NativeStackScreenProps<RootStackParam
   const handleOpenDirectory = useCallback(() => navigation.navigate('Directory'), [navigation]);
   const handleOpenKnowledge = useCallback(() => navigation.navigate('Knowledge'), [navigation]);
   const handleOpenServiceHub = useCallback(() => navigation.navigate('ServiceHub'), [navigation]);
+  const handleOpenAnalytics = useCallback(() => navigation.navigate('Analytics'), [navigation]);
 
   return (
     <View style={styles.container}>
@@ -67,6 +68,15 @@ export function HomeScreen({ navigation }: NativeStackScreenProps<RootStackParam
           description: 'Submit requests, approve tickets, and monitor SLA health for operations teams.',
           actionLabel: 'Go to Service Hub',
           onPress: handleOpenServiceHub
+        }}
+      />
+      <QuickActionCard
+        widget={{
+          id: 'analytics',
+          title: 'Analytics intelligence',
+          description: 'Review KPI trends, alerts, and reporting schedules while on the move.',
+          actionLabel: 'Open analytics',
+          onPress: handleOpenAnalytics
         }}
       />
     </View>

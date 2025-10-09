@@ -57,6 +57,8 @@
 
   **Progress Update (02 May 2024)**: Directory now features pinned filters, virtualised rendering, and rich profile drawer; knowledge hub ships debounced search + category/status filtering; mobile clients inherit React Query caching with AsyncStorage persistence and offline notices across widgets, directory, knowledge, and service hub modules.
 
+  **Progress Update (06 May 2024)**: Adaptive home dashboard now supports drag-and-drop widget orchestration, density toggles, telemetry capture, offline provenance messaging, and quick action personalisation aligned with the design governance pack.
+
 4. **Service Hub & Operations Platform Build — 25%**
    - *Goal*: Implement cross-department service hub covering HR, IT, finance, and operations workflows per Feature Pillar 4 and issue remediation.
    - *Integration Touchpoints*:
@@ -76,6 +78,8 @@
 
   **Progress Update (02 May 2024)**: Service hub workflow health feeds on web and mobile now expose data provenance, stale warnings, and shared offline notices while intake/approval flows remain scoped for upcoming milestone.
 
+  **Progress Update (07 May 2024)**: Delivered production-grade service catalog and guided intake experience with SLA telemetry, department filters, contextual knowledge suggestions, and submission fallback handling wired to the workflow health dataset and React Query mutations. Intake wizard enforces validation, attachment guidance, and checklist gating ahead of automation workstreams.
+
 5. **Analytics, AI, Mobile Security & Administration Enablement — 5%**
    - *Goal*: Provide analytics, AI capabilities, mobile security hardening, and administrative controls outlined in Feature Pillars 5–7 and fix suggestions.
    - *Integration Touchpoints*:
@@ -92,6 +96,10 @@
      3. Deliver mobile offline sync, push notification device registry, and crash/error monitoring dashboards.
      4. Stand up RBAC console, audit log viewer, integration credential vault, and security posture analytics.
      5. Launch investment management module with holdings tracking, maker-checker workflow, and treasury export tooling.
+
+  **Progress Update (09 May 2024)**: Delivered analytics control tower on web with KPI grid, assistant-led insights, alert
+  acknowledgements, reporting schedule governance, and security posture dashboards, paired with a mobile analytics snapshot
+  screen that mirrors metrics, alerts, and device hygiene telemetry using React Query caching and offline fallbacks.
 
 6. **Quality Assurance, Release Engineering, and Change Management — 0%**
    - *Goal*: Execute full-spectrum testing, compile reports, manage release, produce documentation, and coordinate hypercare.

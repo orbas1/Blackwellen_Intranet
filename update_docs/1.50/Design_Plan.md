@@ -30,18 +30,23 @@ This design plan aligns the provider, user, and web applications with the Versio
 ### Component & Interaction Model
 - Standardise card, button, and form behaviours, referencing `Cards.md`, `Screen_buttons.md`, and `Forms.md` to ensure consistent states, loading patterns, and error handling.
 - Expand widget library to cover analytics tiles, AI prompts, and service hub trackers, ensuring each component includes telemetry hooks and fallback states.
+- Specify service hub intake wizard behaviours (catalog filters, SLA badge legend, knowledge sidebar, offline submission fallback) to align with operations readiness requirements.
+- Specify adaptive home personalisation drawer patterns governing widget visibility, density modes, data freshness controls, quick action catalogues, and accessibility announcements for drag-and-drop interactions.
 - Document offline messaging patterns (data provenance badges, stale warnings, connectivity banners) for directory, knowledge, and widget surfaces shared across web and mobile.
 - Embed in-product guidance and tooltips tied to the new logic flows (`Logic_Flow_map.md`, `Logic_Flow_update.md`) to steer users through complex workflows.
+- Finalise analytics control tower interactions covering dataset/timeframe/segment filters, KPI cards with inline trend sparklines, acknowledgement workflows for alerts, and guided scheduling toggles. Each state is paired with telemetry contracts and fallbacks for partially loaded datasets.
 
 ### Content & Visual Direction
 - Apply refreshed typographic hierarchy defined in `Fonts.md` and `Screen_text.md`, ensuring legibility on high-density dashboards.
 - Harmonise colour usage with updated palettes (`Colours.md`, `Screen_update_Screen_colours.md`), factoring in accessibility contrast, theme variants, and stateful cues (info, success, warning, danger).
 - Curate imagery and iconography from `Screens_update_images_and_vectors.md` that reflects diverse personas and operations scenarios.
+- Align analytics data visualisations with governance-approved palettes and legend hierarchies so KPI tiles, forecast charts, and security posture summaries remain readable across light, dark, and emo themes.
 
 ### Accessibility & Compliance
 - Integrate WCAG 2.2 AA compliance checks into every screen, with special focus on keyboard navigation, focus indicators, and motion reduction for emo themes.
 - Ensure privacy and security cues (consent badges, encryption labels, audit logs) are visually consistent across provider and user flows.
 - Document compliance annotations for regulated modules (HR, Finance, Investment) with traceability to `Forms.md` and `Menus.md`.
+- Capture analytics-specific accessibility guardrails, including keyboard navigation for filter chips, ARIA descriptions for SVG trendlines, and data table fallbacks for every chart or KPI tile.
 
 ---
 
@@ -56,16 +61,19 @@ This design plan aligns the provider, user, and web applications with the Versio
 - Define component responsibilities (`component_functions.md`, `component_types.md`) for dashboards, profile modules, and resource galleries, including data loading states and error boundaries.
 - Capture error boundary fallback treatments and profile drawer content hierarchy to maintain parity with production build behaviour.
 - Extend profile and settings designs (`Profile Styling`, `Profile Look.md`, `Settings.md`) to support custom layouts, privacy controls, and cross-device synchronisation.
+- Add analytics intelligence layouts that combine KPI mosaics, AI prompt drawers, and security posture summaries with deterministic spacing, ensuring parity with the implemented `AnalyticsConsole.tsx` scaffolding.
 
 ### Content & Asset Strategy
 - Refresh hero imagery, iconography, and illustration sets via `Assets.md`, `images_and _vectors.md`, and `Resources.md` to reduce load times and maintain brand fidelity.
 - Update copy frameworks for service hub, analytics, and AI features with tone guides, compliance disclaimers, and localisation guidelines.
 - Implement content governance workflows ensuring partial updates are reviewed before publication, with instrumentation for analytics and experimentation.
+- Add admin-ready playbooks for analytics alert messaging, schedule cadence descriptions, and device security posture guidance so support teams can explain KPI anomalies or posture failures without escalating to product.
 
 ### Accessibility & Performance
 - Enforce semantic HTML structure, ARIA labelling, and focus management across new components, documenting expectations in `Function Design.md` and `Placement.md`.
 - Conduct performance budgeting for asset-heavy pages, leveraging lazy loading and responsive imagery strategies outlined in `Home page images.md` and `images_and _vectors.md`.
 - Validate theme variants for colour contrast, animation preferences, and text scaling prior to production release.
+- Instrument analytics canvases with graceful degradation paths: trend SVGs expose data tables, 3D charts offer 2D alternatives, and assistant narratives default to plain text when generative features are disabled.
 
 ---
 
@@ -74,6 +82,7 @@ This design plan aligns the provider, user, and web applications with the Versio
 - **Design QA**: Establish a design QA checklist that mirrors `Design_update_progress_tracker.md` metrics, enabling joint reviews with QA to verify fidelity, usability, and accessibility.
 - **Testing Artefacts**: Supply reference snapshots and accessibility scripts for automated visual regression and contrast testing.
 - **Documentation**: Maintain living documentation for each component, including usage guidelines, accessibility notes, and integration examples.
+- **Analytics Verification Kit**: Deliver annotated datasets, filter mappings, and alert acknowledgement scripts so QA can validate the deterministic mock analytics service and cross-platform parity with the React Native analytics screen.
 
 ---
 
@@ -81,7 +90,7 @@ This design plan aligns the provider, user, and web applications with the Versio
 1. **Sprint 1–2**: Finalise design tokens, navigation architecture, and component inventory updates. Publish governance artefacts and approve key personas.
 2. **Sprint 3–4**: Deliver annotated layouts for application home, service hub, and knowledge flows. Release web homepage and microsite templates with theme variants.
 3. **Sprint 5–6**: Complete AI, analytics, and settings experiences. Conduct cross-device usability testing and iterate on accessibility findings.
-4. **Sprint 7–8**: Support engineering implementation, run design QA sprints, and prepare release documentation for launch readiness.
+4. **Sprint 7–8**: Support engineering implementation, run design QA sprints, and prepare release documentation for launch readiness. Analytics console walkthroughs and security posture design notes will be reviewed with compliance and SecOps before the release train locks.
 
 ---
 
@@ -90,6 +99,7 @@ This design plan aligns the provider, user, and web applications with the Versio
 - **Partial Template Drift**: Implement versioning and approval workflows for partials to prevent inconsistent layouts across departments.
 - **Asset Performance**: Optimise imagery and vectors with strict file-size budgets and CDN caching strategies. Introduce programmatic asset synthesis for mobile icons/splash screens using approved SVG templates to avoid binary commits while maintaining brand fidelity.
 - **Cross-Platform Parity**: Run parity reviews between native and web experiences to ensure component behaviour and copy remain aligned.
+- **Analytics Data Fidelity**: Validate that deterministic mock datasets remain aligned with production schemas; flag drift through weekly check-ins with data engineering.
 
 ---
 

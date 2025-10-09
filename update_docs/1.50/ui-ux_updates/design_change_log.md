@@ -45,14 +45,14 @@ Version 1.50 modernises the Blackwellen intranet experience across web and nativ
 - Offline-ready documents display sync indicator, last refreshed timestamp, and manual refresh option.
 
 ### Service Hub Portal
-- Unified intake form with stepper, SLA indicator chips, contextual help popovers, and escalation prompts. Added quick action to clone previous requests.
-- Request dashboard uses status kanban for operations teams with swimlane toggles (by priority, department, age). Added bulk action bar for assignment.
-- Approval modals include risk assessment summary, required attachments list, and comment audit trail.
+- Filterable service catalog introduces search, department chips, SLA badge legend, and request volume indicators to prioritise high-impact templates.
+- Guided intake wizard surfaces SLA telemetry, readiness checklist, knowledge recommendations, attachment validation, and offline submission fallback states.
+- Approval modals include risk assessment summary, required attachments list, and comment audit trail, while request dashboard retains kanban swimlanes with bulk assignment bar.
 
 ### Analytics & AI Console
-- KPI builder features tabbed navigation (Overview, Datasets, Alerts, AI Insights) and updated chart colour scheme for accessibility. Added “Story Mode” to narrate KPI changes over time.
-- Scenario planner allows saving presets and sharing with stakeholders; includes slider components, multi-select filters, and comparison charts.
-- Alert centre surfaces trending anomalies, recommended follow-up actions, and integration settings for Slack/email.
+- KPI builder features tabbed navigation (Overview, Datasets, Alerts, AI Insights) and updated chart colour scheme for accessibility. Added “Story Mode” to narrate KPI changes over time alongside persistent dataset/timeframe/segment filter rail and provenance badges.
+- Scenario planner allows saving presets and sharing with stakeholders; includes slider components, multi-select filters, and comparison charts. Security posture summary tiles expose OS patch, encryption, and MFA gauges with drill-down CTA for remediation.
+- Alert centre surfaces trending anomalies, recommended follow-up actions, and integration settings for Slack/email. Acknowledgement drawer captures assignee, remediation note, and follow-up reminder; schedule table introduces pause/resume toggle with audit log callouts and cadence chips for each report.
 
 ### Investment Management Extension
 - Treasury dashboard includes risk heatmaps, portfolio cards, maker-checker approval modals, and compliance checklist overlays.

@@ -46,11 +46,14 @@ Web interaction flows prioritise adaptive personalisation, cross-department serv
 5. Editorial workflow includes statuses (Draft, In Review, Approved, Published). Approvers can add inline comments; publishing triggers version increment and notification to subscribers.
 
 ### 6. Analytics & AI Insights
-1. User lands on Analytics → loads saved default view with KPI set, filters, and data freshness indicator.
-2. Interacting with charts (hover, select range) updates detail panel and triggers cross-filters across other widgets. Undo/redo controls support quick comparison.
-3. Alert creation flow: user selects metric → sets threshold → chooses notification channel (email, in-app, assistant) → optionally adds recipient group. Confirmation summarises settings with ability to test alert.
-4. AI Insights cards propose actions; clicking “Apply” pre-fills request or configuration modal. If lacking permission, user sees escalation prompt with request access CTA.
-5. Scenario planner allows saving, duplicating, sharing scenarios. Publishing scenario requires manager approval; system tracks revision history and comparisons.
+1. User lands on Analytics → loads saved default view with KPI set, dataset/timeframe/segment filters, and data freshness indicator persisted per persona.
+2. Interacting with charts (hover, select range) updates detail panel and triggers cross-filters across other widgets while filter rail chips reflect applied segment. Undo/redo controls support quick comparison and restore previous filter state.
+3. Alert creation flow: user selects metric → sets threshold → chooses notification channel (email, in-app, assistant) → optionally adds recipient group. Confirmation summarises settings with ability to test alert and set acknowledgement reminder window.
+4. Alert acknowledgement drawer captures assignee, remediation note, and optional follow-up time. Completed acknowledgements update audit log and feed assistant insights.
+5. Reporting schedules table exposes cadence, delivery channel, and pause/resume toggle requiring reason and optional resume date; schedule changes log to audit feed and notify subscribers.
+6. Security posture sidebar surfaces OS patch, encryption, and MFA compliance gauges for the filtered segment with drilldown modal enabling device-level remediation actions and communication templates.
+7. AI Insights cards propose actions; clicking “Apply” pre-fills request or configuration modal. If lacking permission, user sees escalation prompt with request access CTA.
+8. Scenario planner allows saving, duplicating, sharing scenarios. Publishing scenario requires manager approval; system tracks revision history and comparisons.
 
 ### 7. Investment Management
 1. Dashboard pulls portfolio data; risk gauge updates based on asset mix and compliance rules.

@@ -21,9 +21,9 @@
 - **Implementation Snapshot (02 May 2024)**: Workflow table uses shared offline notice component; next sprint adds intake wizard.
 
 ## Analytics & AI
-- Analytics dashboards remain in design prototyping; mobile shell currently hosts telemetry hooks awaiting data endpoints.
-- AI assistant experiences scoped for later milestone.
-- **Implementation Snapshot (02 May 2024)**: Navigation placeholders intact; instrumentation ready for future modules.
+- Added analytics intelligence screen with dataset/timeframe/segment selectors, KPI summaries, alert cards, and schedule status mirroring the web control tower.
+- Highlights and mobile security posture tiles reuse mock analytics generators, React Query caching, and offline provenance messaging.
+- **Implementation Snapshot (09 May 2024)**: Screen live in navigation with deterministic datasets, alert severity badges, and responsive grid; conversational AI interaction remains scoped to future sprint.
 
 ## Settings & Admin
 - Theme selection respects system preference with zustand store; manual theme toggles planned.
