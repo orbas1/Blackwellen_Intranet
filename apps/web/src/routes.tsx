@@ -5,6 +5,7 @@ import { AdaptiveHome } from './features/widgets/AdaptiveHome';
 import { Directory } from './features/directory/Directory';
 import { KnowledgeHub } from './features/knowledge/KnowledgeHub';
 import { ServiceHub } from './features/serviceHub/ServiceHub';
+import { AnalyticsConsole } from './features/analytics/AnalyticsConsole';
 
 export const routes: RouteObject[] = [
   {
@@ -22,6 +23,10 @@ export const routes: RouteObject[] = [
       {
         path: 'knowledge',
         element: <KnowledgeHub />
+      },
+      {
+        path: 'analytics',
+        element: <AnalyticsConsole />
       },
       {
         path: 'service-hub',

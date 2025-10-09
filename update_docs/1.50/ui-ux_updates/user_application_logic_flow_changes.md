@@ -62,11 +62,13 @@ The mobile app’s interaction logic centres on adaptive experiences, real-time 
 5. Manager-specific action “Adjust goals” opens external HR link with SSO handshake.
 
 ### 8. Analytics & Investment Insights
-1. Analytics tab requests KPI definitions and latest metrics. Manager role adds team metrics and variance thresholds.
-2. Selecting KPI opens detail modal with chart, commentary, thresholds, and “Create alert” CTA.
-3. Alert configuration requires metric, threshold, channel, frequency. Validation ensures at least one channel selected; success message summarises settings.
-4. Investment approvals follow maker-checker: request opens summary → user reviews details → must provide note → confirm action → success toast + timeline update. Audit trail persisted and accessible via History tab.
-5. Scenario planner flow allows adjusting parameters, previewing impact, and saving scenario to share. Saving triggers permission check; limited to managers/executives.
+1. Analytics tab requests KPI definitions and latest metrics, applying cached dataset/timeframe/segment filters; managers can adjust via pill selectors with live preview updates.
+2. Selecting KPI opens detail modal with chart, commentary, thresholds, and “Create alert” CTA. Modal includes provenance badge, export option, and AI insight card referencing applied segment.
+3. Alert configuration requires metric, threshold, channel, frequency. Validation ensures at least one channel selected; success message summarises settings and offers acknowledgement reminder toggle.
+4. Reporting schedule list allows pause/resume with reason capture and optional reminder date; paused schedules surface banner and assistant offers follow-up tasks.
+5. Security posture panel summarises OS patch, encryption, and MFA compliance for selected segment with “Send guidance” CTA launching templated message workflow.
+6. Investment approvals follow maker-checker: request opens summary → user reviews details → must provide note → confirm action → success toast + timeline update. Audit trail persisted and accessible via History tab.
+7. Scenario planner flow allows adjusting parameters, previewing impact, and saving scenario to share. Saving triggers permission check; limited to managers/executives.
 
 ### 9. Assistant-Driven Automation
 1. User prompts assistant for action (e.g., “Raise IT ticket for laptop issue”).

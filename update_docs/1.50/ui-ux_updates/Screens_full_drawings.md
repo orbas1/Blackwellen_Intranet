@@ -148,21 +148,27 @@ The following annotated wireframe drawings translate the v1.50 specifications in
 
 ### 7. Analytics Snapshot
 ```
-┌──────────────────────── Tabs: My | Team | Benchmarks ──────────┐
-├────────────────────────────────────────────────────────────────┤
-│ KPI Card Grid (2 columns, gap 16pt)                             │
-│ ┌───────────────┐ ┌───────────────┐                             │
-│ │ KPI 1         │ │ KPI 2         │                             │
-│ │ Value 48pt    │ │ Value 48pt    │                             │
-│ └───────────────┘ └───────────────┘                             │
-│ 16pt gap                                                       │
-│ Trend Chart (line) 320×220pt with legend top                   │
-│ Horizontal scroll mini charts                                  │
-├────────────────────────────────────────────────────────────────┤
-│ Alerts Panel 280pt width anchored bottom with list rows 64pt    │
-└────────────────────────────────────────────────────────────────┘
+┌──────────────── Tabs: Overview | KPI Builder | Alerts | Schedules ───────────────┐
+├───────── Filter Rail 264px ─────────┬────────────────────── Content 976px ────────┤
+│ Dataset ▼ (search field 40pt)       │ KPI Card Grid (3 columns @ 304×200px)      │
+│ Timeframe chips (Day/Week/Qtr)      │ ┌──────────────┐ ┌──────────────┐          │
+│ Segment pills (Region, Persona)     │ │ KPI • Δ +4.2%│ │ KPI • Δ -2.1%│          │
+│ Clear Filters button                │ │ Value 48pt   │ │ Value 48pt   │          │
+│ Data Freshness badge                │ └───────▲──────┘ └───────▼──────┘ sparkline│
+├─────────────────────────────────────┤                                          │
+│ AI Insight Drawer Handle            │ Trend Area 960×240px w/ annotation icons  │
+│ Security Posture Summary            │ Legend top-right; hover tooltip 320×160pt │
+│ ┌ OS Patch 92%  ▮▮▮▮▯             │                                          │
+│ │ Encryption 100% ▮▮▮▮▮           │ Alerts Strip (severity badge + acknowledge)│
+│ │ MFA Coverage 88% ▮▮▮▮▯          │                                          │
+│ └ CTA: View devices 48×168px ───────┴────────────────────────────────────────────┤
+│ Alert Drawer (active on tap) 360px width with assignee dropdown, note textarea   │
+│ Schedule Table rows 64px: Name | Cadence chip | Channel icons | Pause toggle     │
+└──────────────────────────────────────────────────────────────────────────────────┘
 ```
-- Chart axes 1px `granite-200`, tooltips 320×160pt.
+- Filter rail uses `granite-50` background, 16px padding, and retains selections across tabs.
+- Security posture tiles employ `catalyst` severity palette with text labels and remediation CTA linking to device list modal.
+- Alert drawer acknowledgement button requires reason text when severity ≥ High; pause toggle triggers confirmation dialog anchored to row.
 
 ### 8. Investment Oversight – Heatmap
 ```
@@ -260,6 +266,8 @@ The following annotated wireframe drawings translate the v1.50 specifications in
 └───────────────────────────────────────────────────────────────────────────────┘
 ```
 - Validation summary appears inline at top when errors, `catalyst-500` border.
+- Sidebar displays SLA metrics panel, readiness checklist, and knowledge cards sourced from operations knowledge base.
+- Offline submission fallback banner displays below the stepper when API unavailable, referencing cached queue messaging.
 
 ### C. Service Tracker Kanban (Web)
 ```

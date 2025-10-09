@@ -5,7 +5,9 @@
 - Directory module adopts React Query backed caching, offline banners, and richer metadata (skills, contact options).
 - Knowledge hub incorporates debounced search, category/status filtering, and offline transparency cues.
 - Service hub workflow health view mirrors SLA, queue depth, and data-source warnings from the web experience.
+- Added breach-rate, backlog trend, and average completion telemetry to mobile workflow cards to stay in lockstep with the enhanced web catalog.
 - Global theming continues to respect system preference while powering safe-area aware layouts and typography.
+- Analytics intelligence screen delivers KPI summaries, alert context, report schedule visibility, and security posture status with dataset/timeframe/segment filters.
 
 ## Platform-Specific Notes
 - **iOS**: Expo-managed runtime targeting iOS 13+; AsyncStorage persistence verified across cold launches; background fetch remains opt-in for future milestone.
@@ -25,6 +27,11 @@
 - Smoke tested on iOS simulator (iPhone 14, iOS 17) and Android emulator (Pixel 6, API 34) validating offline cache hydration and NetInfo toggling.
 - Jest unit coverage extended for service data utilities in preparation for follow-up automation.
 - Next TestFlight/Firebase builds scheduled post-integration of analytics instrumentation (target 08 May).
+
+## Analytics Intelligence Snapshot (09 May 2024)
+- Added React Query-powered `/analytics` screen with cached KPI metrics, delta indicators, and highlight messaging aligned to web telemetry datasets.
+- Surfaced alert severity, SLA countdowns, and recommended actions alongside reporting schedule status for on-the-go triage.
+- Displayed mobile security posture (compliant devices, remediations, opt-in, crash-free sessions) with contextual commentary and last audit timing.
 
 ## Version 1.50 Implementation Update (30 Apr 2024)
 - Introduced Expo-managed React Native shell (`apps/mobile`) delivering adaptive home widgets, directory, knowledge hub, and service hub workflow monitoring with offline-aware fallbacks while continuing to surface native Compose/Swift modules through bridges.

@@ -14,12 +14,16 @@
 
 ## Frontend & Design Highlights
 - Documented adaptive home widget grid, directory search experience, knowledge hub, service hub portal, analytics console, and admin console updates.
+- Upgraded adaptive home experience with drag-and-drop widget personalisation, density controls, telemetry instrumentation, offline provenance banners, and quick action management aligned to design artefacts.
+- Rebuilt the service hub portal with a filterable service catalog, SLA-aware intake wizard, offline submission fallback, and contextual knowledge suggestions stitched into workflow telemetry.
+- Introduced analytics control tower route with KPI grids, SVG trend visualisation, alert acknowledgement workflow, report schedule governance, AI assistant recommendations, and security posture dashboards.
 - Updated design system tokens, accessibility guidelines, and logic flows; progress reflected across design trackers and milestones.
 - Introduced preference management context, directory virtualization, enriched knowledge filters, and global error handling in the intranet web client to support production data volumes and resilience expectations.
 
 ## Mobile Highlights
 - Captured Android, iOS, and PWA release updates with build metadata, feature summaries, technical changes, testing, and rollout steps.
 - Documented mobile screen changes, backend integration updates, widget behaviours, and change log for parity with web experience.
+- Added analytics intelligence screen with dataset/timeframe/segment filters, cached KPI metrics, alert summaries, schedule visibility, and mobile security posture indicators aligned to web telemetry.
 - Upgraded the React Native companion with React Query caching, AsyncStorage persistence, connectivity-aware messaging, and reusable offline components for dashboards, directory search, and knowledge consumption.
 - Replaced bundled binary branding assets with a deterministic SVG-to-PNG generation pipeline executed during build/start commands to keep the repository text-only while ensuring consistent icons and splash screens across platforms.
 

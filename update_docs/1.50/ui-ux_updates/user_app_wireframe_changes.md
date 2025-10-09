@@ -20,6 +20,12 @@
 - Added request timeline view for status tracking, with ability to escalate or add notes.
 - Provided offline draft storage indicator and sync status warnings.
 
+## Analytics Intelligence Screen
+- Introduced dedicated analytics screen featuring dataset/timeframe/segment selectors at top, KPI cards with sparkline trends, and highlights banner summarising key shifts.
+- Embedded alert list with acknowledgement swipe actions, remediation note modal, and scheduled report list with pause/resume toggle plus cadence pill.
+- Added security posture panel showing device hygiene (OS patch, encryption, MFA) with CTA to open device guidance sheet; parity maintained with web control tower design tokens.
+- Wireframes capture offline fallback messaging, cached data timestamp, and assistant prompt shortcuts mirroring the web experience.
+
 ## Accessibility Considerations
 - Ensured minimum tap target 44x44px; defined focus order for keyboard and assistive technology users.
 - Documented high-contrast mode overlays and alternative icon set for reduced motion preferences.

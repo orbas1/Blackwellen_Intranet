@@ -9,7 +9,7 @@
      2. Publish unified token library covering light, dark, emo, and departmental palettes with fallback mapping. ✅ Completed — distributed via Style Dictionary pipeline.
      3. Document component anatomy and states for cards, buttons, forms, menus, and widgets across app and web contexts. ✅ Completed — referenced in `Screens_Updates_widget_functions.md`.
      4. Integrate token updates into design tooling (Figma libraries) and provide change notes to engineering repositories. ✅ Completed — release notes shared 24 Apr.
-     5. Establish governance workflows for partial template updates and theme variant approvals. 🟡 In Progress — governance doc in review, final sign-off pending.
+     5. Establish governance workflows for partial template updates and theme variant approvals. 🟡 In Progress — governance doc in review, final sign-off pending; analytics cadence governance addendum drafted for steering council feedback.
 
 2. **Navigation & Layout Architecture Redesign — 35%**
    - *Goal*: Recompose navigation structures and page frameworks for provider, user, and web experiences.
@@ -21,11 +21,17 @@
 
   **Progress Update (02 May 2024)**: Directory profile drawer, knowledge filters, and offline notices reflected in updated wireframes; analytics console flows remain in review pending telemetry instrumentation.
 
+  **Progress Update (06 May 2024)**: Adaptive home personalisation drawer, drag-and-drop orchestration, quick action governance, and offline provenance messaging documented across screen specs with updated accessibility guidance for keyboard-driven reordering.
+
+  **Progress Update (07 May 2024)**: Service hub catalog filters, SLA telemetry sidebar, attachment validation messaging, and knowledge support patterns captured across wireframes, logic flows, and readiness checklists to guide the new intake wizard implementation.
+
+  **Progress Update (09 May 2024)**: Analytics control tower documentation completed with dataset/timeframe/segment filters, alert acknowledgement flows, reporting schedule governance, AI assistant scripts, and security posture summaries across web and mobile artefacts; progress trackers, task lists, and design plans updated accordingly.
+
 3. **Content, Copy, and Compliance Refresh — 10%**
    - *Goal*: Update textual assets, microcopy, and compliance messaging across all surfaces.
    - *Subtasks*:
-     1. Draft copy decks for new analytics, AI, and service workflows with tone and localisation guidance. 🟡 In Progress — drafts prepared, awaiting compliance review.
-     2. Embed compliance disclaimers, consent notices, and audit cues into key screens and pages. 🟡 In Progress — placeholders noted in wireframes, final copy pending.
+     1. Draft copy decks for new analytics, AI, and service workflows with tone and localisation guidance. ✅ Completed — analytics control tower copy, alert acknowledgement messaging, and assistant guardrails documented with localisation keys.
+     2. Embed compliance disclaimers, consent notices, and audit cues into key screens and pages. 🟡 In Progress — analytics security posture tooltips and schedule governance warnings added; compliance sign-off scheduled Week 5.
      3. Align typography usage with revised scales and truncation behaviours to preserve readability. ✅ Completed — applied in `Screens_Update.md` and design tokens.
      4. Coordinate legal, privacy, and security reviews before publishing final copy packages. ⚪ Not Started — meeting scheduled Week 4.
 
@@ -35,13 +41,13 @@
      1. Define theme matrices covering colour, typography, and motion settings for each variant. ✅ Completed — `Screen_update_Screen_colours.md` updated.
      2. Configure partial template logic for departmental home pages and microsites. 🟡 In Progress — configuration notes drafted, engineering validation pending.
      3. Design personalisation controls for layout toggles, widget pinning, and theme switching. ✅ Completed — captured in `Screens_Update.md` and logic flows.
-     4. Conduct accessibility validation for all themes, addressing contrast, focus, and animation preferences. 🟡 In Progress — Chromatic regression tests queued.
+     4. Conduct accessibility validation for all themes, addressing contrast, focus, and animation preferences. 🟡 In Progress — Chromatic regression tests queued; analytics filter keyboard paths added to audit scope.
      5. Publish implementation guidance for engineers, including token mappings and runtime switching patterns. ⚪ Not Started — targeted for Week 4.
 
 5. **Asset & Media Optimisation — 10%**
    - *Goal*: Curate performant imagery, vectors, and iconography aligned to new experiences.
    - *Subtasks*:
-     1. Inventory existing assets across application and web libraries, identifying gaps and redundancies. 🟡 In Progress — audit underway with mobile branding assets now sourced from generated SVG templates.
+     1. Inventory existing assets across application and web libraries, identifying gaps and redundancies. 🟡 In Progress — audit underway with mobile branding assets now sourced from generated SVG templates and analytics illustration briefs logged.
      2. Produce new illustration and photography sets for adaptive home, service hub, and analytics scenarios. ⚪ Not Started.
      3. Optimise assets for multiple breakpoints (1x, 2x, 3x) and document compression guidelines. ⚪ Not Started.
      4. Update asset management documentation with CDN strategy, naming conventions, and usage rights. 🟡 In Progress — documented deterministic asset generation workflow; CDN policy pending analytics imagery sign-off.
@@ -51,7 +57,7 @@
    - *Subtasks*:
      1. Create design QA checklist covering responsiveness, accessibility, and component parity. ✅ Completed — referenced in `Screens_Update.md` testing section.
      2. Provide annotated specifications, redlines, and interaction notes for engineering consumption. ✅ Completed — distributed via Figma handoff kit.
-     3. Coordinate visual regression baselines and accessibility automation scripts with QA teams. 🟡 In Progress — automation scripts in development.
+     3. Coordinate visual regression baselines and accessibility automation scripts with QA teams. 🟡 In Progress — automation scripts in development with new analytics filter/tab journeys included.
      4. Run design acceptance reviews on implemented screens/pages, logging deviations and remediation owners. ⚪ Not Started — dependent on engineering builds.
      5. Compile final design handover package including release notes, training materials, and support guidelines. ⚪ Not Started.
 

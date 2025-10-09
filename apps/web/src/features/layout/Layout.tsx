@@ -9,6 +9,7 @@ const navItems = [
   { to: '/', label: 'Adaptive Home' },
   { to: '/directory', label: 'Directory' },
   { to: '/knowledge', label: 'Knowledge' },
+  { to: '/analytics', label: 'Analytics' },
   { to: '/service-hub', label: 'Service Hub' }
 ];
 
