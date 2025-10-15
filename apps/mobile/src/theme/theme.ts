@@ -2,14 +2,27 @@ import { DefaultTheme, DarkTheme, Theme as NavigationTheme } from '@react-naviga
 import { Appearance } from 'react-native';
 
 import { useThemeStore } from './themeStore';
+import { themeTokens } from './designTokens';
 
-const palette = {
-  primary: '#366fff',
-  background: '#f7f8fb',
-  card: '#ffffff',
-  text: '#141824',
-  border: '#dfe3f0',
-  notification: '#ff7d54'
+const lightTokens = themeTokens.light;
+const darkTokens = themeTokens.dark;
+
+const lightPalette = {
+  primary: lightTokens.accentPrimary,
+  background: lightTokens.surfaceBackground,
+  card: lightTokens.surface,
+  text: lightTokens.textPrimary,
+  border: lightTokens.border,
+  notification: lightTokens.status.warning
+};
+
+const darkPalette = {
+  primary: darkTokens.accentPrimary,
+  background: darkTokens.surfaceBackground,
+  card: darkTokens.surface,
+  text: darkTokens.textPrimary,
+  border: darkTokens.border,
+  notification: darkTokens.status.warning
 };
 
 function buildNavigationTheme(base: NavigationTheme, overrides: Partial<NavigationTheme>): NavigationTheme {
@@ -27,23 +40,14 @@ const systemPreference = Appearance.getColorScheme();
 export const theme = {
   navigation: buildNavigationTheme(DefaultTheme, {
     dark: false,
-    colors: {
-      primary: palette.primary,
-      background: palette.background,
-      card: palette.card,
-      text: palette.text,
-      border: palette.border,
-      notification: palette.notification
-    }
+    colors: lightPalette
   }),
   getCurrentMode: () => useThemeStore.getState().theme ?? systemPreference ?? 'light',
   getNavigationTheme: () =>
     useThemeStore.getState().theme === 'dark'
       ? buildNavigationTheme(DarkTheme, {
           dark: true,
-          colors: {
-            primary: palette.primary
-          }
+          colors: darkPalette
         })
       : theme.navigation
 };

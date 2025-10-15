@@ -19,6 +19,8 @@
 - Run moderated usability sessions covering widget personalization, service request flow, analytics insights, and mobile offline scenarios.
 - Iterate designs based on findings; update component inventory and accessibility checklist accordingly.
 - Finalise visual regression baseline images and map to QA automation suites.
+- Roll out design QA overlay walkthrough (shortcuts, baseline presets, safe-area diagnostics) so engineering and QA teams capture consistent acceptance evidence across desktop and mobile builds.
+- Verify analytics control tower code paths compile against TanStack Query v5 with typed cache updates so design QA overlays and automation packs execute on production-like bundles without TypeScript regressions.
 
 ## Governance & Deliverables
 - Weekly design QA forum reviews progress and outstanding issues; tasks tracked in Jira board `DESIGN-V150`.

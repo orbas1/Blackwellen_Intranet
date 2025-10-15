@@ -4,6 +4,7 @@ import { memo } from 'react';
 import styles from './topNav.module.css';
 import { ThemeSwitcher } from './ThemeSwitcher';
 import type { ThemeDefinition, ThemeId } from '../styles/themes';
+import { useDesignReview } from '../state/designReview';
 
 interface Props {
   theme: ThemeId;
@@ -19,6 +20,7 @@ const user = {
 
 export const TopNav = memo(function TopNav({ theme, themes, onSelectTheme, onCycleTheme }: Props) {
   const today = format(new Date(), 'EEEE, MMMM d');
+  const { enabled: designReviewEnabled, toggle: toggleDesignReview } = useDesignReview();
 
   return (
     <header className={styles.header}>
@@ -29,6 +31,15 @@ export const TopNav = memo(function TopNav({ theme, themes, onSelectTheme, onCyc
         </p>
       </div>
       <div className={styles.actions}>
+        <button
+          type="button"
+          className={styles.designReviewButton}
+          data-active={designReviewEnabled}
+          onClick={toggleDesignReview}
+          aria-pressed={designReviewEnabled}
+        >
+          Design QA
+        </button>
         <ThemeSwitcher selected={theme} themes={themes} onSelect={onSelectTheme} onCycle={onCycleTheme} />
         <img className={styles.avatar} src="https://avatars.dicebear.com/api/initials/Blackwellen.svg" alt="User avatar" />
       </div>

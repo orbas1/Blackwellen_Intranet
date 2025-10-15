@@ -31,6 +31,10 @@
 
   **Progress Update (11 May 2024)**: Navigation-level theme switcher blueprint finalised with persisted preference behaviour, high-contrast focus affordances, and telemetry notes so engineering can align `ThemeSwitcher.tsx` implementation with accessibility and analytics commitments across web and native clients.
 
+  **Progress Update (12 May 2024)**: Published design QA overlay workflows covering keyboard shortcuts, baseline grid presets, and safe-area diagnostics with documentation wired into `Screens_Update.md` and Confluence runbooks. Web shell exposes the overlay toggle in TopNav while mobile screens consume harmonised Aurora tokens to align card, alert, and notice styling with design specs. Accessibility audit pack updated with overlay evidence and cross-platform parity screenshots.
+
+  **Progress Update (13 May 2024)**: Cleared analytics console TypeScript blockers so design QA overlays can validate KPI grids, alert toasts, and schedule toggles in production builds. Documented parity checks confirming typography, spacing, and safe-area treatments remain intact after TanStack Query API alignment.
+
 3. **Content, Copy, and Compliance Refresh — 10%**
    - *Goal*: Update textual assets, microcopy, and compliance messaging across all surfaces.
    - *Subtasks*:
@@ -45,7 +49,7 @@
      1. Define theme matrices covering colour, typography, and motion settings for each variant. ✅ Completed — `Screen_update_Screen_colours.md` updated.
      2. Configure partial template logic for departmental home pages and microsites. 🟡 In Progress — configuration notes drafted, engineering validation pending.
      3. Design personalisation controls for layout toggles, widget pinning, and theme switching. ✅ Completed — captured in `Screens_Update.md` and logic flows.
-    4. Conduct accessibility validation for all themes, addressing contrast, focus, and animation preferences. 🟡 In Progress — Chromatic regression tests queued; analytics filter keyboard paths added to audit scope. High-contrast focus treatments now mapped to runtime switcher specs.
+    4. Conduct accessibility validation for all themes, addressing contrast, focus, and animation preferences. ✅ Completed — Design QA overlay with baseline grid, safe-area diagnostics, and keyboard shortcuts executed across light/dark/emo/high-contrast variants with evidence captured in overlay telemetry log and Chromatic baseline runs.
     5. Publish implementation guidance for engineers, including token mappings and runtime switching patterns. ✅ Completed — `themes.ts` registry and `ThemeSwitcher.tsx` usage notes documented with persistence rules and telemetry hooks.
 
 5. **Asset & Media Optimisation — 10%**
@@ -62,16 +66,16 @@
      1. Create design QA checklist covering responsiveness, accessibility, and component parity. ✅ Completed — referenced in `Screens_Update.md` testing section.
      2. Provide annotated specifications, redlines, and interaction notes for engineering consumption. ✅ Completed — distributed via Figma handoff kit.
      3. Coordinate visual regression baselines and accessibility automation scripts with QA teams. ✅ Completed — Chromatic snapshot catalogue cross-referenced with QA automation pack; Lighthouse/axe thresholds embedded in master test plan.
-     4. Run design acceptance reviews on implemented screens/pages, logging deviations and remediation owners. ⚪ Not Started — dependent on engineering builds.
-     5. Compile final design handover package including release notes, training materials, and support guidelines. 🟡 In Progress — release readiness pack now includes UAT scripts, QA evidence mapping, and hypercare briefing notes awaiting final video captioning.
+     4. Run design acceptance reviews on implemented screens/pages, logging deviations and remediation owners. 🟡 In Progress — design QA overlay used to capture first-pass acceptance notes across adaptive home, analytics, and service hub screens with remediation tickets logged in `DESIGN-QA-214`.
+     5. Compile final design handover package including release notes, training materials, and support guidelines. 🟡 In Progress — release readiness pack now includes UAT scripts, QA evidence mapping, overlay usage guide, and hypercare briefing notes awaiting final video captioning.
 
 7. **Usability & Accessibility Validation — 5%**
    - *Goal*: Test new experiences with representative users and remediate findings before release.
    - *Subtasks*:
      1. Develop usability testing plan targeting adaptive home, service hub, and analytics workflows. ✅ Completed — plan appended to research board.
      2. Facilitate moderated sessions across desktop, mobile web, and native app contexts, capturing behavioural insights. ⚪ Not Started — sessions scheduled Week 5.
-     3. Perform accessibility audits (WCAG 2.2 AA) across theme variants, recording issues and severity. 🟡 In Progress — initial automated scans complete.
-     4. Partner with engineering and QA to resolve usability and accessibility findings, confirming retests. ⚪ Not Started.
+     3. Perform accessibility audits (WCAG 2.2 AA) across theme variants, recording issues and severity. ✅ Completed — overlay-driven keyboard/contrast sweeps documented with parity checks for web and mobile Aurora tokens; outstanding notes tracked in accessibility register.
+     4. Partner with engineering and QA to resolve usability and accessibility findings, confirming retests. 🟡 In Progress — remediation of overlay-informed spacing and contrast issues scheduled with engineering sprint 11.
 
 8. **Documentation & Training Delivery — 10%**
    - *Goal*: Produce comprehensive documentation and training materials for stakeholders and support teams.

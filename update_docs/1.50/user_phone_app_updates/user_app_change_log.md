@@ -8,6 +8,8 @@
 - Added breach-rate, backlog trend, and average completion telemetry to mobile workflow cards to stay in lockstep with the enhanced web catalog.
 - Global theming continues to respect system preference while powering safe-area aware layouts and typography.
 - Analytics intelligence screen delivers KPI summaries, alert context, report schedule visibility, and security posture status with dataset/timeframe/segment filters.
+- Harmonised Aurora token mappings across quick action cards, offline notices, directory entries, service hub workflows, and analytics intelligence components to ensure parity with web palettes and accessibility standards.
+- Documented design QA overlay usage for mobile parity with web acceptance evidence, ensuring QA teams capture screen-state baselines alongside React Native builds.
 
 ## Platform-Specific Notes
 - **iOS**: Expo-managed runtime targeting iOS 13+; AsyncStorage persistence verified across cold launches; background fetch remains opt-in for future milestone.

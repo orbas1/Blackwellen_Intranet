@@ -11,6 +11,7 @@ Version 1.50 consolidates all user experience refresh items captured in the `App
 - **Accessibility & Compliance Enhancements**: Embedded WCAG 2.2 AA checks, localisation hooks, and security status call-outs in `Screen_text.md`, `Organisation_and_positions.md`, and `Accessibility` notes to ensure consistent navigation cues and critical messaging.
 - **Theme & Layout Orchestration**: Added support for theme variants, emo themes, and partial template overrides to accommodate departmental home pages and microsites, using shared layout primitives (`Logic_Flow_map.md`, `Screens_Update_Logic_Flow_map.md`).
 - **Theme Control Runtime**: Captured navigation-level theme switcher patterns, persisted preference rules, and high-contrast accessibility treatments aligned with the production implementation in `ThemeSwitcher.tsx` and token registry updates (`Screens_Update.md`, `Colours.md`).
+- **Design QA Overlay Toolkit**: Introduced overlay HUD specifications with keyboard shortcuts, baseline grid presets, safe-area diagnostics, and telemetry capture notes so design, engineering, and QA teams can align on acceptance evidence across platforms.
 
 ---
 
@@ -118,3 +119,11 @@ Version 1.50 consolidates all user experience refresh items captured in the `App
   build IDs, Lighthouse report locations, Detox artifact paths) to streamline cross-functional sign-off.
 - Published UAT facilitation notes highlighting copy tone, accessibility callouts, and success metrics so departmental
   champions evaluate experiences against approved design baselines during Wave 1.
+
+## Application Shell Implementation Sync (13 May 2024)
+- Documented analytics console TypeScript remediations that align TanStack Query v5 APIs with design QA overlays, ensuring KPI
+  mosaics, alert acknowledgements, and schedule toggles render accurately in production builds for acceptance reviews.
+- Updated `Screens_Update.md` and analytics copy decks with validation notes confirming typography, spacing, and safe-area
+  treatments remain unchanged post-build fix so design sign-off can proceed without rework.
+- Logged reinstated `npm run build` evidence within the design QA register to demonstrate that overlays, Chromatic baselines,
+  and accessibility sweeps now run on production-equivalent bundles.

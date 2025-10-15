@@ -1,4 +1,9 @@
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import {
+  keepPreviousData,
+  useMutation,
+  useQuery,
+  useQueryClient
+} from '@tanstack/react-query';
 import { formatDistanceToNow } from 'date-fns';
 import { useEffect, useMemo, useState } from 'react';
 
@@ -132,6 +137,14 @@ function buildTrendPoints(kpi: AnalyticsSnapshot['kpis'][number]) {
 
 function buildAssistantSeed(snapshot: AnalyticsSnapshot): AnalyticsAssistantResponse {
   const topAlert = snapshot.alerts[0];
+  const references: AnalyticsAssistantResponse['references'] = [
+    { type: 'kpi', id: snapshot.kpis[0]?.id ?? 'primary-kpi' }
+  ];
+
+  if (topAlert) {
+    references.push({ type: 'alert', id: topAlert.id });
+  }
+
   return {
     summary: `${snapshot.dataset.name} ${formatSegmentLabel(snapshot.segment)} view refreshed ${formatTimeframeLabel(snapshot.timeframe)} with ${snapshot.kpis.length} KPIs ready.`,
     highlights: snapshot.aiInsights.slice(0, 3),
@@ -146,12 +159,13 @@ function buildAssistantSeed(snapshot: AnalyticsSnapshot): AnalyticsAssistantResp
         ]
       : [],
     confidence: Number(Math.max(0.6, Math.min(0.95, snapshot.dataQuality.completeness)).toFixed(2)),
-    references: [
-      { type: 'kpi', id: snapshot.kpis[0]?.id ?? 'primary-kpi' },
-      ...(topAlert ? [{ type: 'alert', id: topAlert.id }] : [])
-    ]
+    references
   };
 }
+
+type AnalyticsSnapshotResponse = Awaited<ReturnType<typeof fetchAnalyticsSnapshot>>;
+type AnalyticsAlertAckResponse = Awaited<ReturnType<typeof acknowledgeAnalyticsAlert>>;
+type AnalyticsScheduleResponse = Awaited<ReturnType<typeof updateAnalyticsReportSchedule>>;
 
 export function AnalyticsConsole() {
   const [params, setParams] = useState<AnalyticsQueryParams>(DEFAULT_PARAMS);
@@ -159,10 +173,12 @@ export function AnalyticsConsole() {
   const [conversation, setConversation] = useState<AssistantMessage[]>([]);
   const queryClient = useQueryClient();
 
-  const { data, isFetching } = useQuery({
-    queryKey: ['analytics', params],
+  const queryKey = useMemo(() => ['analytics', params] as const, [params]);
+
+  const { data, isFetching } = useQuery<AnalyticsSnapshotResponse>({
+    queryKey,
     queryFn: () => fetchAnalyticsSnapshot(params),
-    keepPreviousData: true
+    placeholderData: keepPreviousData
   });
 
   const snapshot = data?.data;
@@ -188,7 +204,7 @@ export function AnalyticsConsole() {
     ]);
   }, [snapshot?.dataset.key, snapshot?.segment, snapshot?.timeframe]);
 
-  const assistantMutation = useMutation({
+  const assistantMutation = useMutation<AnalyticsAssistantResponse, Error, string>({
     mutationFn: async (prompt: string) => {
       if (!snapshot) {
         throw new Error('Snapshot unavailable');
@@ -215,10 +231,14 @@ export function AnalyticsConsole() {
     }
   });
 
-  const acknowledgeMutation = useMutation({
+  const acknowledgeMutation = useMutation<
+    AnalyticsAlertAckResponse,
+    Error,
+    string
+  >({
     mutationFn: (alertId: string) => acknowledgeAnalyticsAlert(alertId),
     onSuccess: ({ data: acknowledgement }, alertId) => {
-      queryClient.setQueryData(['analytics', params], (current) => {
+      queryClient.setQueryData<AnalyticsSnapshotResponse>(queryKey, (current) => {
         if (!current?.data) {
           return current;
         }
@@ -242,11 +262,15 @@ export function AnalyticsConsole() {
     }
   });
 
-  const scheduleMutation = useMutation({
+  const scheduleMutation = useMutation<
+    AnalyticsScheduleResponse,
+    Error,
+    { scheduleId: string; enabled: boolean }
+  >({
     mutationFn: ({ scheduleId, enabled }: { scheduleId: string; enabled: boolean }) =>
       updateAnalyticsReportSchedule({ scheduleId, enabled }),
     onSuccess: ({ data: schedule }) => {
-      queryClient.setQueryData(['analytics', params], (current) => {
+      queryClient.setQueryData<AnalyticsSnapshotResponse>(queryKey, (current) => {
         if (!current?.data) {
           return current;
         }
@@ -278,7 +302,9 @@ export function AnalyticsConsole() {
     if (!snapshot) {
       return [];
     }
-    return snapshot.alerts.sort((a, b) => (a.status === 'active' ? -1 : 1) - (b.status === 'active' ? -1 : 1));
+    return [...snapshot.alerts].sort(
+      (a, b) => (a.status === 'active' ? -1 : 1) - (b.status === 'active' ? -1 : 1)
+    );
   }, [snapshot]);
 
   const handleParamChange = (next: Partial<AnalyticsQueryParams>) => {

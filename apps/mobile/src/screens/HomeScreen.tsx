@@ -2,10 +2,13 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { useQuery } from '@tanstack/react-query';
 import { useCallback } from 'react';
 import { ActivityIndicator, Linking, StyleSheet, View } from 'react-native';
+import { useMemo } from 'react';
 
 import { OfflineNotice } from '../components/OfflineNotice';
 import { QuickActionCard } from '../components/QuickActionCard';
 import { useNetworkStatus } from '../hooks/useNetworkStatus';
+import { useThemeTokens } from '../hooks/useThemeTokens';
+import { ThemeTokens } from '../theme/designTokens';
 import { RootStackParamList } from '../navigation/AppNavigator';
 import { fetchWidgets } from '../services/mobileApi';
 
@@ -15,6 +18,8 @@ export function HomeScreen({ navigation }: NativeStackScreenProps<RootStackParam
     queryKey: ['widgets'],
     queryFn: fetchWidgets
   });
+  const tokens = useThemeTokens();
+  const styles = useMemo(() => createStyles(tokens), [tokens]);
 
   const handleOpenDirectory = useCallback(() => navigation.navigate('Directory'), [navigation]);
   const handleOpenKnowledge = useCallback(() => navigation.navigate('Knowledge'), [navigation]);
@@ -83,11 +88,13 @@ export function HomeScreen({ navigation }: NativeStackScreenProps<RootStackParam
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 24,
-    backgroundColor: '#f7f8fb',
-    gap: 16
-  }
-});
+function createStyles(tokens: ThemeTokens) {
+  return StyleSheet.create({
+    container: {
+      flex: 1,
+      padding: 24,
+      backgroundColor: tokens.surfaceBackground,
+      gap: 16
+    }
+  });
+}

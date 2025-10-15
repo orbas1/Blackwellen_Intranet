@@ -37,6 +37,7 @@ Version 1.50 refreshes the adaptive home, directory, knowledge, service hub, ana
 - **Security & Compliance Sidebar**: Security posture summary highlights OS patch compliance, encryption status, jailbreak/root detection, and MFA adoption. Mobile hygiene cards mirror web layout with call-to-action buttons to resolve issues.
 - **AI Drawer**: Provides narrative insights, recommended actions, and timeline of user feedback. Suggested prompts adapt to filter context and note data freshness/segment applied.
 - **Accessibility**: Charts include data tables accessible via toggle; keyboard shortcuts for annotations documented. Filter chips expose ARIA labels, acknowledgements announce status updates, and schedule toggles include focus lock to maintain context.
+- **Build Integrity**: TypeScript migration to TanStack Query v5 ensures the analytics console compiles with typed cache updates so design QA overlays, accessibility audits, and Playwright runs validate KPI grids, alerts, and schedules on production bundles.
 
 ## Admin & Settings
 - **Feature Flag Console**: Table view with search, segmentation preview, rollout percentage slider, and audit log panel.
@@ -48,3 +49,4 @@ Version 1.50 refreshes the adaptive home, directory, knowledge, service hub, ana
 - Design QA checklists updated with screenshot references and accessibility acceptance criteria per screen.
 - Automated visual regression baseline captures 25 key states across web and mobile experiences.
 - Usability testing plan prioritises widget personalisation, service request submission, and analytics KPI creation.
+- Design QA overlay provides keyboard-accessible toggle, baseline grid presets (8/12/16px), and safe-area diagnostics surfaced via HUD, with telemetry logging instructions referenced for acceptance evidence.

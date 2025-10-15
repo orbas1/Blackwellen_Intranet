@@ -18,6 +18,7 @@ This design plan aligns the provider, user, and web applications with the Versio
 - **Artefact Management**: Centralise Figma boards, design tokens, and documentation using the inventory defined in `Cards.md`, `Forms.md`, `Menus.md`, `Fonts.md`, and `Colours.md` with version control mappings to Git repositories.
 - **Review Cadence**: Conduct fortnightly design reviews covering application and web tracks, aligning with engineering sprint demos and QA checkpoints.
 - **Compliance Alignment**: Partner with Legal, Privacy, and Security teams to validate copy decks, data visualisations, and consent flows before they progress from design to build.
+- **Design QA Overlay**: Maintain a shared design QA overlay playbook documenting keyboard shortcuts, baseline grid presets, safe-area diagnostics, and telemetry expectations so designers, engineers, and QA can perform acceptance reviews with consistent evidence capture across web and mobile surfaces.
 
 ---
 
@@ -48,6 +49,7 @@ This design plan aligns the provider, user, and web applications with the Versio
 - Ensure privacy and security cues (consent badges, encryption labels, audit logs) are visually consistent across provider and user flows.
 - Document compliance annotations for regulated modules (HR, Finance, Investment) with traceability to `Forms.md` and `Menus.md`.
 - Capture analytics-specific accessibility guardrails, including keyboard navigation for filter chips, ARIA descriptions for SVG trendlines, and data table fallbacks for every chart or KPI tile.
+- Instrument design QA overlay evidence (baseline grids, safe-area guides, overlay HUD telemetry) in `Screens_Update.md`, mobile screen specs, and acceptance checklists to demonstrate parity of Aurora tokens, contrast ratios, and spacing across platforms.
 
 ---
 
@@ -86,6 +88,7 @@ This design plan aligns the provider, user, and web applications with the Versio
 - **Documentation**: Maintain living documentation for each component, including usage guidelines, accessibility notes, and integration examples.
 - **Analytics Verification Kit**: Deliver annotated datasets, filter mappings, and alert acknowledgement scripts so QA can validate the deterministic mock analytics service and cross-platform parity with the React Native analytics screen.
 - **QA Evidence Mapping**: Link every critical screen to QA artefacts (Chromatic build IDs, Lighthouse report paths, Detox artifact directories) and Playwright coverage expectations documented in `update_docs/1.50/test_plan.md` so that release sign-off references explicit design acceptance evidence.
+- **Build Health Assurance**: Coordinate with engineering to maintain TanStack Query v5 alignment in `AnalyticsConsole.tsx`, preserving typed cache updates so design QA overlays and automated smoke suites can execute on production-equivalent bundles without regression blockers.
 - **UAT Facilitation**: Provide script cards capturing success metrics, tone guidance, and accessibility prompts enabling departmental champions to validate experiences against the approved design baselines during UAT waves.
 
 ---

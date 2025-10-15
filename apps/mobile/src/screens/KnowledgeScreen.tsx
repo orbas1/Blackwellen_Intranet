@@ -1,10 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
 import { formatDistanceToNow } from 'date-fns';
+import { useMemo } from 'react';
 import { FlatList, RefreshControl, StyleSheet, Text, View } from 'react-native';
 
 import { OfflineNotice } from '../components/OfflineNotice';
 import { useNetworkStatus } from '../hooks/useNetworkStatus';
 import { fetchKnowledge } from '../services/mobileApi';
+import { useThemeTokens } from '../hooks/useThemeTokens';
+import { ThemeTokens } from '../theme/designTokens';
 
 export function KnowledgeScreen() {
   const isOnline = useNetworkStatus();
@@ -12,6 +15,8 @@ export function KnowledgeScreen() {
     queryKey: ['knowledge'],
     queryFn: fetchKnowledge
   });
+  const tokens = useThemeTokens();
+  const styles = useMemo(() => createStyles(tokens), [tokens]);
 
   const articles = data?.data ?? [];
 
@@ -50,64 +55,67 @@ export function KnowledgeScreen() {
   );
 }
 
-const styles = StyleSheet.create({
-  list: {
-    flex: 1,
-    backgroundColor: '#f7f8fb'
-  },
-  card: {
-    margin: 16,
-    padding: 16,
-    borderRadius: 16,
-    backgroundColor: '#ffffff',
-    borderWidth: 1,
-    borderColor: '#e3e7f2',
-    gap: 8
-  },
-  category: {
-    color: '#4b5162',
-    textTransform: 'uppercase',
-    fontSize: 12,
-    fontWeight: '600'
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: '700'
-  },
-  summary: {
-    color: '#4b5162'
-  },
-  tags: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 6
-  },
-  tag: {
-    backgroundColor: '#ecf1ff',
-    color: '#366fff',
-    borderRadius: 12,
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    fontWeight: '600'
-  },
-  meta: {
-    color: '#4b5162',
-    fontSize: 12
-  },
-  status: {
-    fontWeight: '600',
-    color: '#141824'
-  },
-  header: {
-    paddingHorizontal: 16,
-    paddingTop: 16,
-    gap: 8
-  },
-  metaRow: {
-    color: '#4b5162'
-  },
-  metaWarning: {
-    color: '#c05621',
-    fontWeight: '600'
-  }
-});
+function createStyles(tokens: ThemeTokens) {
+  return StyleSheet.create({
+    list: {
+      flex: 1,
+      backgroundColor: tokens.surfaceBackground
+    },
+    card: {
+      margin: 16,
+      padding: 16,
+      borderRadius: 16,
+      backgroundColor: tokens.surface,
+      borderWidth: 1,
+      borderColor: tokens.borderSubtle,
+      gap: 8
+    },
+    category: {
+      color: tokens.textMuted,
+      textTransform: 'uppercase',
+      fontSize: 12,
+      fontWeight: '600'
+    },
+    title: {
+      fontSize: 18,
+      fontWeight: '700',
+      color: tokens.textPrimary
+    },
+    summary: {
+      color: tokens.textSecondary
+    },
+    tags: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      gap: 6
+    },
+    tag: {
+      backgroundColor: tokens.statusBackground.info,
+      color: tokens.status.info,
+      borderRadius: 12,
+      paddingHorizontal: 8,
+      paddingVertical: 4,
+      fontWeight: '600'
+    },
+    meta: {
+      color: tokens.textSecondary,
+      fontSize: 12
+    },
+    status: {
+      fontWeight: '600',
+      color: tokens.textPrimary
+    },
+    header: {
+      paddingHorizontal: 16,
+      paddingTop: 16,
+      gap: 8
+    },
+    metaRow: {
+      color: tokens.textSecondary
+    },
+    metaWarning: {
+      color: tokens.status.warning,
+      fontWeight: '600'
+    }
+  });
+}

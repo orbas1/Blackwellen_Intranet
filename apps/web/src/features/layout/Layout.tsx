@@ -2,6 +2,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 
 import { TopNav } from '../../components/TopNav';
+import { DesignReviewOverlay } from '../../components/DesignReviewOverlay';
 import { useTheme } from '../../state/theme';
 import styles from './layout.module.css';
 
@@ -40,6 +41,7 @@ export function Layout() {
           </Suspense>
         </div>
       </main>
+      <DesignReviewOverlay />
     </div>
   );
 }
