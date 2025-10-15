@@ -44,6 +44,7 @@
 - Published k6 load script targeting service hub workflows with performance and failover metrics (p95 latency, error rate, PostgreSQL replication lag) and recorded results demonstrating compliance with SLOs.
 - Logged UAT session outcomes and conditional approvals, integrating DocuSign evidence and mitigation plans for Finance export enhancement (`UAT-215`).
 - Finalised release and hypercare plan specifying deployment window, feature flag rollout sequencing, staffing roster, communications cadence, and exit criteria.
+- Introduced Playwright multi-browser suite bootstrapped via preview build server verifying adaptive-home keyboard reordering, persisting layout state, and exporting trace/video artefacts for CAB evidence; closed QA-V150-121 action and refreshed test dashboards.
 
 ## Architecture & Data Readiness Hardening
 - Published enterprise dependency matrix with remediation workflow, security scan actions, and upgrade cadence covering backend, frontend, mobile, data, observability, and security platforms (`dependency_updates.md`).

@@ -16,3 +16,5 @@
 
 > **Update (06 May 2024)**: Widget interactions now emit telemetry events (`dashboard.widgets.loaded`, `dashboard.widgets.reordered`, `dashboard.manual-refresh`) and display offline provenance badges when the dashboard falls back to cached data. Personalisation drawer governs density, visibility, and quick action catalogues with accessibility announcements for reorder and toggle actions.
 > **Update (09 May 2024)**: Analytics widgets now include acknowledgement workflows, schedule toggles, and security posture gauges; telemetry events (`analytics.alert.acknowledged`, `analytics.schedule.updated`, `analytics.security.drilldown`) captured with parity across web and mobile implementations.
+
+> **Update (14 May 2024)**: Adaptive home widget grid now specifies ARIA labels, keyboard instructions, and offline narration hooks consumed by Playwright regression tests and VoiceOver/TalkBack hint libraries to guarantee parity between documented accessibility requirements and automation evidence.

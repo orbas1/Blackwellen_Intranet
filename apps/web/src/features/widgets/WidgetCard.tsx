@@ -1,4 +1,4 @@
-import { forwardRef, type CSSProperties } from 'react';
+import { forwardRef, type CSSProperties, useId } from 'react';
 import { clsx } from 'clsx';
 import { DraggableAttributes } from '@dnd-kit/core';
 import type { SyntheticListenerMap } from '@dnd-kit/core/dist/hooks/utilities/useSyntheticListeners';
@@ -31,6 +31,16 @@ export const WidgetCard = forwardRef<HTMLDivElement, Props>(function WidgetCard(
 ) {
   const metrics = widget.metrics ?? [];
   const tags = widget.tags ?? [];
+  const titleId = useId();
+  const descriptionId = useId();
+  const statusId = useId();
+  const offlineBadgeId = useId();
+  const dragInstructionsId = useId();
+
+  const describedBy = [descriptionId, statusId];
+  if (isOffline) {
+    describedBy.push(offlineBadgeId);
+  }
 
   return (
     <article
@@ -38,17 +48,21 @@ export const WidgetCard = forwardRef<HTMLDivElement, Props>(function WidgetCard(
       className={clsx(styles.card, styles[widget.type], styles[`density-${density}`])}
       data-dragging={isDragging}
       style={style}
+      role="listitem"
+      aria-labelledby={titleId}
+      aria-describedby={describedBy.join(' ')}
     >
       <header className={styles.header}>
         <div>
           <span className={styles.badge}>{widget.category}</span>
-          <h3>{widget.title}</h3>
+          <h3 id={titleId}>{widget.title}</h3>
         </div>
         <div className={styles.headerActions}>
           <button
             type="button"
             className={styles.iconButton}
             aria-label="Reorder widget"
+            aria-describedby={dragInstructionsId}
             {...(dragHandleProps?.attributes ?? {})}
             {...(dragHandleProps?.listeners ?? {})}
           >
@@ -66,7 +80,9 @@ export const WidgetCard = forwardRef<HTMLDivElement, Props>(function WidgetCard(
         </div>
       </header>
 
-      <p className={styles.description}>{widget.description}</p>
+      <p className={styles.description} id={descriptionId}>
+        {widget.description}
+      </p>
 
       {widget.insight && <p className={styles.insight}>{widget.insight}</p>}
 
@@ -98,7 +114,7 @@ export const WidgetCard = forwardRef<HTMLDivElement, Props>(function WidgetCard(
         </a>
       )}
 
-      <footer className={styles.footer}>
+      <footer className={styles.footer} id={statusId}>
         <span className={styles.status} data-quality={widget.dataQuality}>
           {widget.dataQuality === 'fresh' && 'Fresh data'}
           {widget.dataQuality === 'stale' && 'Stale — refresh recommended'}
@@ -109,7 +125,15 @@ export const WidgetCard = forwardRef<HTMLDivElement, Props>(function WidgetCard(
         <span>Source: {dataSource === 'api' ? 'Live service' : 'Offline dataset'}</span>
       </footer>
 
-      {isOffline && <span className={styles.offlineBadge}>Offline mode</span>}
+      <span id={dragInstructionsId} className="sr-only">
+        Press space to pick up this widget, use the arrow keys to change its position, then press space again to drop it.
+      </span>
+
+      {isOffline && (
+        <span className={styles.offlineBadge} id={offlineBadgeId} role="status">
+          Offline mode
+        </span>
+      )}
     </article>
   );
 });

@@ -127,3 +127,8 @@ Version 1.50 consolidates all user experience refresh items captured in the `App
   treatments remain unchanged post-build fix so design sign-off can proceed without rework.
 - Logged reinstated `npm run build` evidence within the design QA register to demonstrate that overlays, Chromatic baselines,
   and accessibility sweeps now run on production-equivalent bundles.
+
+## Accessibility Automation Sync (14 May 2024)
+- Captured adaptive home keyboard reordering guidance with explicit ARIA labelling, offline status narration, and instructional microcopy updates reflected in `Screens_Update.md`, `Screens_Updates_widget_functions.md`, and quick reference overlays.
+- Linked Playwright regression evidence (trace/video artefacts) to design QA acceptance checklist ensuring parity between documented accessibility standards and automated validation.
+- Updated mobile parity notes so VoiceOver/TalkBack hint specifications mirror the refined desktop copy, keeping cross-platform guidance aligned for upcoming usability sessions.

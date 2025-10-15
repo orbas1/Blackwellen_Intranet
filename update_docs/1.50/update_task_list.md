@@ -106,6 +106,10 @@
   `AnalyticsConsole.tsx` TypeScript regressions. CI now executes cleanly, unlocking automation and design QA sign-off for the
   analytics stream.
 
+  **Progress Update (14 May 2024)**: Finalised Playwright E2E configuration with build-backed preview server and multi-browser
+  coverage, adding adaptive-home keyboard reordering regression that persists layout state and records artefacts for CAB
+  evidence. Closed QA-V150-121 action, refreshed test results dashboards, and linked trace/video outputs to QA Wave 3 plan.
+
 6. **Quality Assurance, Release Engineering, and Change Management — 0%**
    - *Goal*: Execute full-spectrum testing, compile reports, manage release, produce documentation, and coordinate hypercare.
    - *Integration Touchpoints*:

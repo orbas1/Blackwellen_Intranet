@@ -56,7 +56,7 @@ hypercare planning.
 | API Contract Tests | Backend QA | Newman CLI `newman run contracts/v150.postman_collection.json -e envs/qa.postman_env.json` | Nightly & pre-release | Zero schema diffs vs. OpenAPI/GraphQL specs. |
 | Load Testing | Backend QA | `k6 run update_docs/1.50/update_tests/test_scripts/performance_test.js` | Weekly & pre-release | P95 < 600ms, error rate < 1%. |
 | Frontend Unit & Component | Frontend QA | `pnpm --filter @blackwellen/intranet-web test` (React Testing Library) | Per commit & nightly | 100% suites passing; coverage ≥ 80%. |
-| Frontend E2E | Frontend QA | `pnpm --filter @blackwellen/intranet-web exec playwright test --project=chromium` | Nightly & release candidate | Critical paths green across Chromium/Firefox/WebKit. |
+| Frontend E2E | Frontend QA | `npm --prefix apps/web run test:e2e` | Nightly & release candidate | Critical paths green across Chromium/Firefox/WebKit with persisted layout/accessibility assertions. |
 | Accessibility | Frontend & Design QA | `pnpm exec axe-storybook-ci`, `lighthouse-ci http://qa-web/adaptive-home` | Weekly | WCAG 2.2 AA compliance; Lighthouse accessibility ≥ 95. |
 | Visual Regression | Frontend QA | Chromatic GitHub check | Per PR | All diffs reviewed; no unapproved regressions. |
 | Mobile Unit Tests | Mobile QA | `npm --prefix apps/mobile run test` (Jest) | Per commit | > 90% suites green. |

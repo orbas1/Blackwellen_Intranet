@@ -35,6 +35,8 @@
 
   **Progress Update (13 May 2024)**: Cleared analytics console TypeScript blockers so design QA overlays can validate KPI grids, alert toasts, and schedule toggles in production builds. Documented parity checks confirming typography, spacing, and safe-area treatments remain intact after TanStack Query API alignment.
 
+  **Progress Update (14 May 2024)**: Adaptive home artefacts refreshed with explicit keyboard guidance, ARIA relationships, and offline narration notes; Playwright regression evidence linked into design QA checklist and mobile parity briefs updated with VoiceOver/TalkBack hint scripts ahead of usability wave.
+
 3. **Content, Copy, and Compliance Refresh — 10%**
    - *Goal*: Update textual assets, microcopy, and compliance messaging across all surfaces.
    - *Subtasks*:
