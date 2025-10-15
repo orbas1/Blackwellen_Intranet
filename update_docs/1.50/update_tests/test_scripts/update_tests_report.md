@@ -11,11 +11,11 @@
 3. k6 load tests validated service hub latency targets under 90 req/s browse and 60 concurrent workflow submissions; PostgreSQL failover drill completed within 46 seconds.
 4. Accessibility audits delivered Lighthouse Accessibility score of 98 and axe CI zero violations on adaptive home and analytics console; analytics palette contrast improvements verified via Chromatic `#2215`.
 5. UAT Wave 1 & 2 sessions completed with four departments signing off and Finance conditional approval pending export enhancement (`UAT-215`).
+6. Playwright multi-browser suite now runs against preview builds, capturing keyboard-driven widget reordering traces and videos for CAB evidence while persisting layout assertions for regression coverage.
 
 ## Outstanding Actions
 | ID | Description | Owner | Target Date |
 | --- | --- | --- | --- |
-| QA-V150-121 | Finalise Playwright config + suite for widget drag/drop keyboard controls | Frontend QA | 13 May 2024 |
 | MOB-245 | Investigate `expo-notifications` Detox warning | Mobile Team | 14 May 2024 |
 | UAT-215 | Verify finance export cost centre breakdown post-fix | Finance QA | 13 May 2024 |
 | OBS-147 | Implement production synthetic workflow SLA monitor | SRE Guild | 15 May 2024 |

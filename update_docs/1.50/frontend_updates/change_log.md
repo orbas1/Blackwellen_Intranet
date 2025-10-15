@@ -70,3 +70,8 @@
 - Updated `AnalyticsConsole.tsx` to use TanStack Query v5 `placeholderData: keepPreviousData`, typed query results, and strongly typed cache updates for alert acknowledgements and schedule toggles.
 - Restored successful `npm run build` execution by resolving TypeScript regressions, unblocking CI/CD, Playwright smoke tests, and design QA overlay verification on production bundles.
 - Documented the remediation path in Version 1.50 trackers so analytics feature squads and QA leads can trace the fix when reviewing release readiness.
+
+## Adaptive Home Accessibility Automation (14 May 2024)
+- Added explicit labelling and descriptive relationships to `WidgetGrid` and `WidgetCard`, including keyboard instructions, ARIA roles, and live status updates for offline banners so assistive technologies announce reorder context accurately.
+- Bootstrapped Playwright configuration with preview build web server and Chromium/Firefox/WebKit projects; created adaptive home regression ensuring keyboard-driven reordering persists layout state via localStorage.
+- Updated QA documentation and reporting to include trace/video artefacts from the Playwright run, enabling CAB-ready evidence for accessibility controls.

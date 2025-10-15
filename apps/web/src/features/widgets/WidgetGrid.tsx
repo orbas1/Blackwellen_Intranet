@@ -73,7 +73,14 @@ export function WidgetGrid({ widgets, density, dataSource, onReorder, onRefresh,
       onDragCancel={() => setActiveWidgetId(null)}
     >
       <SortableContext items={widgets.map((widget) => widget.id)} strategy={rectSortingStrategy}>
-        <div className={styles.grid} data-density={density} data-dragging={Boolean(activeWidgetId)}>
+        <div
+          className={styles.grid}
+          data-density={density}
+          data-dragging={Boolean(activeWidgetId)}
+          role="list"
+          aria-label="Adaptive home widgets"
+          aria-live="polite"
+        >
           {widgets.map((widget) => (
             <SortableWidgetCard
               key={widget.id}
