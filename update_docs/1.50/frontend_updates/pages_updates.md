@@ -26,10 +26,12 @@
 - Added dataset/timeframe/segment selectors driving React Query analytics snapshot fetching with mock fallbacks and telemetry.
 - Rendered KPI cards with delta/status indicators, SVG trend visualisation, and data quality summary panel for transparency.
 - Embedded AI assistant drawer, alert acknowledgement controls, reporting schedule toggles, and security/mobile posture summaries with responsive layout.
+- Updated TanStack Query integration to v5 patterns with typed cache updates, resolving TypeScript build failures and ensuring CI-ready coverage for alert acknowledgements and schedule toggles.
 
 ## Global Elements
 - Navigation shell continues to present adaptive experiences with updated typography and spacing tokens from the design system refresh.
 - Theme provider persists preferences and now wraps a new global error boundary to guard against unexpected UI failures.
+- Introduced design QA overlay toggle in TopNav exposing keyboard-accessible baseline grids, safe-area columns, and telemetry prompts for acceptance reviews.
 
 ### Application Shell & Pages (30 Apr 2024)
 - **Adaptive Home**: Widget grid renders celebration, compliance, insight, and document call-to-action cards with data source labelling and CTA instrumentation.

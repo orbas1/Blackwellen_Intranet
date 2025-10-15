@@ -23,6 +23,27 @@
   gap: 1.25rem;
 }
 
+.designReviewButton {
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--surface-color);
+  color: inherit;
+  font-weight: 600;
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.designReviewButton:hover {
+  background: var(--surface-hover);
+}
+
+.designReviewButton[data-active='true'] {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--badge-background);
+}
+
 .avatar {
   width: 40px;
   height: 40px;

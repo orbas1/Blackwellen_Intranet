@@ -1,9 +1,12 @@
 import { useQuery } from '@tanstack/react-query';
+import { useMemo } from 'react';
 import { FlatList, RefreshControl, StyleSheet, Text, View } from 'react-native';
 
 import { OfflineNotice } from '../components/OfflineNotice';
 import { useNetworkStatus } from '../hooks/useNetworkStatus';
 import { fetchWorkflows } from '../services/mobileApi';
+import { useThemeTokens } from '../hooks/useThemeTokens';
+import { ThemeTokens } from '../theme/designTokens';
 
 export function ServiceHubScreen() {
   const isOnline = useNetworkStatus();
@@ -11,6 +14,8 @@ export function ServiceHubScreen() {
     queryKey: ['workflows'],
     queryFn: fetchWorkflows
   });
+  const tokens = useThemeTokens();
+  const styles = useMemo(() => createStyles(tokens), [tokens]);
 
   const workflows = data?.data ?? [];
 
@@ -42,49 +47,52 @@ export function ServiceHubScreen() {
   );
 }
 
-const styles = StyleSheet.create({
-  list: {
-    flex: 1,
-    backgroundColor: '#f7f8fb'
-  },
-  card: {
-    margin: 16,
-    padding: 16,
-    backgroundColor: '#ffffff',
-    borderRadius: 16,
-    borderWidth: 1,
-    borderColor: '#e3e7f2',
-    gap: 6
-  },
-  name: {
-    fontSize: 18,
-    fontWeight: '600'
-  },
-  status: {
-    marginTop: 4,
-    fontWeight: '700'
-  },
-  healthy: {
-    color: '#1f7a3a'
-  },
-  unhealthy: {
-    color: '#d93025'
-  },
-  header: {
-    paddingHorizontal: 16,
-    paddingTop: 16,
-    gap: 8
-  },
-  metaRow: {
-    color: '#4b5162'
-  },
-  metaWarning: {
-    color: '#c05621',
-    fontWeight: '600'
-  },
-  empty: {
-    textAlign: 'center',
-    marginTop: 48,
-    color: '#4b5162'
-  }
-});
+function createStyles(tokens: ThemeTokens) {
+  return StyleSheet.create({
+    list: {
+      flex: 1,
+      backgroundColor: tokens.surfaceBackground
+    },
+    card: {
+      margin: 16,
+      padding: 16,
+      backgroundColor: tokens.surface,
+      borderRadius: 16,
+      borderWidth: 1,
+      borderColor: tokens.borderSubtle,
+      gap: 6
+    },
+    name: {
+      fontSize: 18,
+      fontWeight: '600',
+      color: tokens.textPrimary
+    },
+    status: {
+      marginTop: 4,
+      fontWeight: '700'
+    },
+    healthy: {
+      color: tokens.status.success
+    },
+    unhealthy: {
+      color: tokens.status.danger
+    },
+    header: {
+      paddingHorizontal: 16,
+      paddingTop: 16,
+      gap: 8
+    },
+    metaRow: {
+      color: tokens.textSecondary
+    },
+    metaWarning: {
+      color: tokens.status.warning,
+      fontWeight: '600'
+    },
+    empty: {
+      textAlign: 'center',
+      marginTop: 48,
+      color: tokens.textSecondary
+    }
+  });
+}

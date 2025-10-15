@@ -4,6 +4,7 @@ import { ReactNode, useMemo } from 'react';
 import { ThemeProvider } from '../state/theme';
 import { PreferenceProvider } from '../state/preferences';
 import { DashboardProvider } from '../state/dashboard';
+import { DesignReviewProvider } from '../state/designReview';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,7 +29,9 @@ export function AppProviders({ children }: Props) {
     <QueryClientProvider client={queryClient}>
       <PreferenceProvider>
         <DashboardProvider>
-          <ThemeProvider value={value}>{children}</ThemeProvider>
+          <ThemeProvider value={value}>
+            <DesignReviewProvider>{children}</DesignReviewProvider>
+          </ThemeProvider>
         </DashboardProvider>
       </PreferenceProvider>
     </QueryClientProvider>

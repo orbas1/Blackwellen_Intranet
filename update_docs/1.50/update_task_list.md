@@ -101,6 +101,11 @@
   acknowledgements, reporting schedule governance, and security posture dashboards, paired with a mobile analytics snapshot
   screen that mirrors metrics, alerts, and device hygiene telemetry using React Query caching and offline fallbacks.
 
+  **Progress Update (13 May 2024)**: Hardened analytics control tower build by aligning TanStack Query usage with v5 APIs,
+  introducing typed cache updates for alert acknowledgements and schedule toggles, and restoring production builds blocked by
+  `AnalyticsConsole.tsx` TypeScript regressions. CI now executes cleanly, unlocking automation and design QA sign-off for the
+  analytics stream.
+
 6. **Quality Assurance, Release Engineering, and Change Management — 0%**
    - *Goal*: Execute full-spectrum testing, compile reports, manage release, produce documentation, and coordinate hypercare.
    - *Integration Touchpoints*:
@@ -142,3 +147,5 @@
      5. Deliver final design documentation, copy decks, and training materials for operations, support, and communications teams.
 
   **Progress Update (11 May 2024)**: Runtime theme registry and navigation-level switcher shipped with persisted preference rules, high-contrast focus treatments, and telemetry hooks. Design artefacts updated (`Screens_Update.md`, `Colours.md`, `Design_Plan.md`) to guide engineering handoff and ensure parity with mobile theme governance ahead of accessibility regression runs.
+
+  **Progress Update (12 May 2024)**: Delivered design QA overlay with keyboard-accessible baseline grid, safe-area columns, and live telemetry notes to accelerate acceptance reviews. Web shell exposes persistent "Design QA" control aligned to design governance playbook, while mobile screens adopt harmonised Aurora token mappings for cards, notices, analytics tiles, and navigation themes. Accessibility audit trail updated across `Screens_Update.md`, `Design_Plan.md`, and mobile screen specs to capture parity evidence.

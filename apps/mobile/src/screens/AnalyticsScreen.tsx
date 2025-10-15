@@ -15,6 +15,8 @@ import {
   AnalyticsTimeframe,
   fetchAnalyticsSnapshot
 } from '../services/mobileApi';
+import { useThemeTokens } from '../hooks/useThemeTokens';
+import { ThemeTokens } from '../theme/designTokens';
 
 const DATASETS: { key: AnalyticsDatasetKey; label: string }[] = [
   { key: 'engagement', label: 'Engagement' },
@@ -68,27 +70,24 @@ function formatDelta(kpi: AnalyticsSnapshot['kpis'][number]) {
   }
 }
 
-function statusColour(status: AnalyticsSnapshot['kpis'][number]['status']) {
+function statusColour(status: AnalyticsSnapshot['kpis'][number]['status'], tokens: ThemeTokens) {
   switch (status) {
     case 'exceeding':
-      return '#0f9d58';
+      return tokens.analyticsStatus.exceeding;
     case 'on-track':
-      return '#1a73e8';
+      return tokens.analyticsStatus.onTrack;
     case 'watch':
-      return '#fbbc05';
+      return tokens.analyticsStatus.watch;
     case 'at-risk':
-      return '#d93025';
+      return tokens.analyticsStatus.atRisk;
     default:
-      return '#596177';
+      return tokens.textSecondary;
   }
 }
 
-const ALERT_BACKGROUND: Record<AnalyticsAlert['severity'], string> = {
-  critical: '#fdecea',
-  high: '#fff4e5',
-  medium: '#e8f0fe',
-  low: '#edf5f1'
-};
+function getAlertBackground(severity: AnalyticsAlert['severity'], tokens: ThemeTokens) {
+  return tokens.alertBackground[severity];
+}
 
 export function AnalyticsScreen({}: NativeStackScreenProps<RootStackParamList, 'Analytics'>) {
   const isOnline = useNetworkStatus();
@@ -99,6 +98,8 @@ export function AnalyticsScreen({}: NativeStackScreenProps<RootStackParamList, '
     keepPreviousData: true
   });
 
+  const tokens = useThemeTokens();
+  const styles = useMemo(() => createStyles(tokens), [tokens]);
   const snapshot = useMemo(() => data?.data, [data]);
   const handleDatasetChange = useCallback((key: AnalyticsDatasetKey) => {
     setParams((prev) => ({ ...prev, dataset: key }));
@@ -173,7 +174,7 @@ export function AnalyticsScreen({}: NativeStackScreenProps<RootStackParamList, '
             {snapshot.kpis.map((kpi) => (
               <View key={kpi.id} style={styles.kpiCard}>
                 <Text style={styles.kpiLabel}>{kpi.label}</Text>
-                <Text style={[styles.kpiValue, { color: statusColour(kpi.status) }]}>{formatValue(kpi)}</Text>
+                <Text style={[styles.kpiValue, { color: statusColour(kpi.status, tokens) }]}>{formatValue(kpi)}</Text>
                 <Text style={styles.kpiDelta}>
                   {formatDelta(kpi)} {kpi.comparisonPeriod}
                 </Text>
@@ -197,14 +198,14 @@ export function AnalyticsScreen({}: NativeStackScreenProps<RootStackParamList, '
               <Text style={styles.muted}>No active alerts for this view.</Text>
             ) : (
               snapshot.alerts.map((alert) => (
-                <View key={alert.id} style={styles.alertCard}>
+                <View key={alert.id} style={[styles.alertCard, { backgroundColor: getAlertBackground(alert.severity, tokens) }]}>
                   <View>
                     <Text style={styles.alertTitle}>{alert.title}</Text>
                     <Text style={styles.alertDescription}>{alert.description}</Text>
                     <Text style={styles.alertImpact}>{alert.impact}</Text>
                     <Text style={styles.alertOwner}>Owner: {alert.owner}</Text>
                   </View>
-                  <View style={[styles.alertBadge, { backgroundColor: ALERT_BACKGROUND[alert.severity] }]}>
+                  <View style={[styles.alertBadge, { backgroundColor: getAlertBackground(alert.severity, tokens) }]}>
                     <Text style={styles.alertBadgeText}>{alert.severity.toUpperCase()}</Text>
                     <Text style={styles.alertBadgeText}>{alert.slaHours}h SLA</Text>
                   </View>
@@ -264,234 +265,235 @@ export function AnalyticsScreen({}: NativeStackScreenProps<RootStackParamList, '
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-    gap: 18,
-    backgroundColor: '#f7f8fb'
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: '700',
-    color: '#102a43'
-  },
-  subtitle: {
-    fontSize: 15,
-    color: '#596177',
-    marginBottom: 8
-  },
-  filters: {
-    backgroundColor: '#ffffff',
-    padding: 16,
-    borderRadius: 16,
-    gap: 8,
-    shadowColor: '#0f1a2b',
-    shadowOpacity: 0.06,
-    shadowRadius: 12,
-    elevation: 2
-  },
-  filterLabel: {
-    fontWeight: '600',
-    color: '#1b2233'
-  },
-  filterRow: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 8
-  },
-  filterButton: {
-    paddingVertical: 6,
-    paddingHorizontal: 12,
-    borderRadius: 12,
-    backgroundColor: '#eef1f8'
-  },
-  filterButtonActive: {
-    backgroundColor: '#1a73e8'
-  },
-  filterText: {
-    color: '#475066',
-    fontWeight: '600'
-  },
-  filterTextActive: {
-    color: '#ffffff',
-    fontWeight: '700'
-  },
-  section: {
-    gap: 16
-  },
-  snapshotMeta: {
-    gap: 4
-  },
-  snapshotTitle: {
-    fontSize: 20,
-    fontWeight: '700',
-    color: '#1b2233'
-  },
-  snapshotMetaText: {
-    color: '#596177',
-    fontSize: 13
-  },
-  kpiGrid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 12
-  },
-  kpiCard: {
-    width: '48%',
-    backgroundColor: '#ffffff',
-    padding: 12,
-    borderRadius: 14,
-    shadowColor: '#0f1a2b',
-    shadowOpacity: 0.08,
-    shadowRadius: 10,
-    elevation: 2
-  },
-  kpiLabel: {
-    fontSize: 14,
-    color: '#475066',
-    marginBottom: 4
-  },
-  kpiValue: {
-    fontSize: 24,
-    fontWeight: '700'
-  },
-  kpiDelta: {
-    fontSize: 13,
-    color: '#596177'
-  },
-  kpiStatus: {
-    fontSize: 12,
-    fontWeight: '600',
-    marginTop: 4,
-    color: '#475066'
-  },
-  highlights: {
-    backgroundColor: '#ffffff',
-    borderRadius: 16,
-    padding: 14,
-    gap: 6
-  },
-  sectionTitle: {
-    fontSize: 18,
-    fontWeight: '700',
-    color: '#1b2233',
-    marginBottom: 6
-  },
-  highlightText: {
-    color: '#475066',
-    fontSize: 14
-  },
-  alertSection: {
-    backgroundColor: '#ffffff',
-    borderRadius: 16,
-    padding: 14,
-    gap: 10
-  },
-  alertCard: {
-    backgroundColor: '#f6f8fc',
-    borderRadius: 12,
-    padding: 12,
-    marginBottom: 8
-  },
-  alertTitle: {
-    fontWeight: '700',
-    marginBottom: 4,
-    color: '#1b2233'
-  },
-  alertDescription: {
-    color: '#475066',
-    marginBottom: 4
-  },
-  alertImpact: {
-    color: '#596177',
-    fontSize: 13,
-    marginBottom: 2
-  },
-  alertOwner: {
-    color: '#475066',
-    fontSize: 12
-  },
-  alertBadge: {
-    marginTop: 8,
-    alignSelf: 'flex-start',
-    paddingVertical: 4,
-    paddingHorizontal: 10,
-    borderRadius: 10
-  },
-  alertBadgeText: {
-    color: '#1b2233',
-    fontSize: 12,
-    fontWeight: '600'
-  },
-  scheduleSection: {
-    backgroundColor: '#ffffff',
-    borderRadius: 16,
-    padding: 14,
-    gap: 10
-  },
-  scheduleCard: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    backgroundColor: '#f6f8fc',
-    borderRadius: 12,
-    padding: 12
-  },
-  scheduleName: {
-    fontWeight: '700',
-    color: '#1b2233'
-  },
-  scheduleMeta: {
-    color: '#596177',
-    fontSize: 13
-  },
-  scheduleEnabled: {
-    color: '#0f9d58',
-    fontWeight: '700'
-  },
-  schedulePaused: {
-    color: '#d93025',
-    fontWeight: '700'
-  },
-  mobileSecurity: {
-    backgroundColor: '#ffffff',
-    borderRadius: 16,
-    padding: 14,
-    gap: 8
-  },
-  securityRow: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 10
-  },
-  securityTile: {
-    backgroundColor: '#e8f0fe',
-    padding: 12,
-    borderRadius: 12,
-    minWidth: 110,
-    alignItems: 'center'
-  },
-  securityValue: {
-    fontSize: 18,
-    fontWeight: '700',
-    color: '#1b2233'
-  },
-  securityLabel: {
-    fontSize: 12,
-    color: '#475066'
-  },
-  securityComment: {
-    color: '#475066',
-    fontSize: 14
-  },
-  securityMeta: {
-    color: '#596177',
-    fontSize: 12
-  },
-  muted: {
-    color: '#596177'
-  },
-  loadingIndicator: {
-    marginTop: 12
-  }
-});
+function createStyles(tokens: ThemeTokens) {
+  return StyleSheet.create({
+    container: {
+      padding: 20,
+      gap: 18,
+      backgroundColor: tokens.surfaceBackground
+    },
+    title: {
+      fontSize: 28,
+      fontWeight: '700',
+      color: tokens.textPrimary
+    },
+    subtitle: {
+      fontSize: 15,
+      color: tokens.textSecondary,
+      marginBottom: 8
+    },
+    filters: {
+      backgroundColor: tokens.surface,
+      padding: 16,
+      borderRadius: 16,
+      gap: 8,
+      shadowColor: tokens.raisedCardShadow,
+      shadowOpacity: 0.06,
+      shadowRadius: 12,
+      elevation: 2
+    },
+    filterLabel: {
+      fontWeight: '600',
+      color: tokens.textPrimary
+    },
+    filterRow: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      gap: 8
+    },
+    filterButton: {
+      paddingVertical: 6,
+      paddingHorizontal: 12,
+      borderRadius: 12,
+      backgroundColor: tokens.surfaceSubtle
+    },
+    filterButtonActive: {
+      backgroundColor: tokens.accentPrimary
+    },
+    filterText: {
+      color: tokens.textSecondary,
+      fontWeight: '600'
+    },
+    filterTextActive: {
+      color: tokens.textOnAccent,
+      fontWeight: '700'
+    },
+    section: {
+      gap: 16
+    },
+    snapshotMeta: {
+      gap: 4
+    },
+    snapshotTitle: {
+      fontSize: 20,
+      fontWeight: '700',
+      color: tokens.textPrimary
+    },
+    snapshotMetaText: {
+      color: tokens.textSecondary,
+      fontSize: 13
+    },
+    kpiGrid: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      gap: 12
+    },
+    kpiCard: {
+      width: '48%',
+      backgroundColor: tokens.surface,
+      padding: 12,
+      borderRadius: 14,
+      shadowColor: tokens.raisedCardShadow,
+      shadowOpacity: 0.08,
+      shadowRadius: 10,
+      elevation: 2
+    },
+    kpiLabel: {
+      fontSize: 14,
+      color: tokens.textSecondary,
+      marginBottom: 4
+    },
+    kpiValue: {
+      fontSize: 24,
+      fontWeight: '700'
+    },
+    kpiDelta: {
+      fontSize: 13,
+      color: tokens.textSecondary
+    },
+    kpiStatus: {
+      fontSize: 12,
+      fontWeight: '600',
+      marginTop: 4,
+      color: tokens.textSecondary
+    },
+    highlights: {
+      backgroundColor: tokens.surface,
+      borderRadius: 16,
+      padding: 14,
+      gap: 6
+    },
+    sectionTitle: {
+      fontSize: 18,
+      fontWeight: '700',
+      color: tokens.textPrimary,
+      marginBottom: 6
+    },
+    highlightText: {
+      color: tokens.textSecondary,
+      fontSize: 14
+    },
+    alertSection: {
+      backgroundColor: tokens.surface,
+      borderRadius: 16,
+      padding: 14,
+      gap: 10
+    },
+    alertCard: {
+      borderRadius: 12,
+      padding: 12,
+      marginBottom: 8
+    },
+    alertTitle: {
+      fontWeight: '700',
+      marginBottom: 4,
+      color: tokens.textPrimary
+    },
+    alertDescription: {
+      color: tokens.textSecondary,
+      marginBottom: 4
+    },
+    alertImpact: {
+      color: tokens.textSecondary,
+      fontSize: 13,
+      marginBottom: 2
+    },
+    alertOwner: {
+      color: tokens.textSecondary,
+      fontSize: 12
+    },
+    alertBadge: {
+      marginTop: 8,
+      alignSelf: 'flex-start',
+      paddingVertical: 4,
+      paddingHorizontal: 10,
+      borderRadius: 10
+    },
+    alertBadgeText: {
+      color: tokens.textPrimary,
+      fontSize: 12,
+      fontWeight: '600'
+    },
+    scheduleSection: {
+      backgroundColor: tokens.surface,
+      borderRadius: 16,
+      padding: 14,
+      gap: 10
+    },
+    scheduleCard: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      backgroundColor: tokens.tileBackground,
+      borderRadius: 12,
+      padding: 12
+    },
+    scheduleName: {
+      fontWeight: '700',
+      color: tokens.textPrimary
+    },
+    scheduleMeta: {
+      color: tokens.textSecondary,
+      fontSize: 13
+    },
+    scheduleEnabled: {
+      color: tokens.status.success,
+      fontWeight: '700'
+    },
+    schedulePaused: {
+      color: tokens.status.danger,
+      fontWeight: '700'
+    },
+    mobileSecurity: {
+      backgroundColor: tokens.surface,
+      borderRadius: 16,
+      padding: 14,
+      gap: 8
+    },
+    securityRow: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      gap: 10
+    },
+    securityTile: {
+      backgroundColor: tokens.statusBackground.info,
+      padding: 12,
+      borderRadius: 12,
+      minWidth: 110,
+      alignItems: 'center'
+    },
+    securityValue: {
+      fontSize: 18,
+      fontWeight: '700',
+      color: tokens.textPrimary
+    },
+    securityLabel: {
+      fontSize: 12,
+      color: tokens.textSecondary
+    },
+    securityComment: {
+      color: tokens.textSecondary,
+      fontSize: 14
+    },
+    securityMeta: {
+      color: tokens.textSecondary,
+      fontSize: 12
+    },
+    muted: {
+      color: tokens.textSecondary
+    },
+    loadingIndicator: {
+      marginTop: 12
+    }
+  });
+}

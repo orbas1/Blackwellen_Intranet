@@ -17,9 +17,11 @@
 - Upgraded adaptive home experience with drag-and-drop widget personalisation, density controls, telemetry instrumentation, offline provenance banners, and quick action management aligned to design artefacts.
 - Rebuilt the service hub portal with a filterable service catalog, SLA-aware intake wizard, offline submission fallback, and contextual knowledge suggestions stitched into workflow telemetry.
 - Introduced analytics control tower route with KPI grids, SVG trend visualisation, alert acknowledgement workflow, report schedule governance, AI assistant recommendations, and security posture dashboards.
+- Hardened analytics control tower implementation by aligning TanStack Query v5 APIs, adding typed cache updates, and restoring `npm run build` success after `AnalyticsConsole.tsx` TypeScript regressions blocked CI.
 - Updated design system tokens, accessibility guidelines, and logic flows; progress reflected across design trackers and milestones.
 - Introduced preference management context, directory virtualization, enriched knowledge filters, and global error handling in the intranet web client to support production data volumes and resilience expectations.
 - Implemented runtime theming orchestration delivering light, dark, emo (Twilight, Ember, Tide), and high-contrast variants with persisted preferences, accessibility-compliant focus/fallback styling, and an adaptive theme switcher embedded in the global navigation.
+- Launched keyboard-accessible design QA overlay with baseline grid, safe-area diagnostics, and telemetry prompts alongside harmonised Aurora tokens across mobile cards, notices, analytics tiles, and navigation themes for cross-platform accessibility parity.
 
 ## Mobile Highlights
 - Captured Android, iOS, and PWA release updates with build metadata, feature summaries, technical changes, testing, and rollout steps.
@@ -35,6 +37,7 @@
 ## Quality Assurance & Release Engineering
 - Published Version 1.50 master test plan detailing environment readiness, automation scripts, and coverage expectations across backend, frontend, mobile, database, security, and accessibility domains.
 - Executed QA Wave 1 with PHPUnit/Pest suites, Newman contract verification, k6 load testing, Lighthouse audits, Chromatic regression, Detox device matrix, and credential scrub validation; findings tracked in `QA-V150`.
+- Recovered frontend build pipeline by resolving analytics TypeScript errors, unblocking automated smoke tests, Playwright coverage, and design QA overlay verification on production bundles.
 - Produced QA execution report with outstanding action register, evidence pack references, and Wave 2 priorities for failover drills and OWASP ZAP scans.
 - Drafted release readiness pack including deployment checklist, hypercare roster, and training syllabus circulated to PMO and departmental champions.
 - Added security automation script (`security_scan.sh`) with Snyk, Trivy, and Gitleaks orchestration plus detailed remediation log covering npm, composer, IaC, and OWASP ZAP findings.

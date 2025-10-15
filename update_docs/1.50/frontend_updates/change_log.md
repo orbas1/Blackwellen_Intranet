@@ -5,6 +5,7 @@
 - Replaced provider-facing components with employee-centric directory, knowledge, and service hub modules.
 - Launched analytics control tower with KPI grid, AI assistant, alert acknowledgement workflow, reporting schedule governance, and security posture dashboards aligned with backend telemetry.
 - Hardened accessibility support (WCAG 2.2 AA) including keyboard navigation, ARIA annotations, focus management, and high-contrast themes.
+- Added design QA overlay with baseline grids, safe-area diagnostics, and telemetry prompts accessible from the global TopNav to accelerate acceptance reviews and accessibility validation.
 
 ## Component Updates
 - New `WidgetGrid` component supporting drag-and-drop, density modes, and lazy loading.
@@ -59,3 +60,13 @@
 - Introduced `/analytics` route with dataset/timeframe/segment selectors, KPI cards, SVG trend visualisation, and data quality summaries backed by mock analytics generators.
 - Embedded AI assistant panel generating deterministic recommendations from KPI deltas and alert severity while tracking interactions through the telemetry service.
 - Added alert acknowledgement mutation, reporting schedule toggle, and security control/mobile posture summaries with accessible styling and responsive layout.
+
+## Design QA Overlay & Token Harmonisation (12 May 2024)
+- Exposed "Design QA" toggle in TopNav rendering keyboard-accessible baseline grid, safe-area columns, and overlay HUD with shortcut instructions and telemetry cues.
+- Persisted overlay state via local storage and wired overlay telemetry into design acceptance checklists for QA and UAT evidence capture.
+- Harmonised Aurora theme tokens across mobile React Native components (quick action cards, offline notice, directory, service hub, analytics intelligence) and navigation themes to match web palettes and accessibility contracts.
+
+## Analytics Build Hardening (13 May 2024)
+- Updated `AnalyticsConsole.tsx` to use TanStack Query v5 `placeholderData: keepPreviousData`, typed query results, and strongly typed cache updates for alert acknowledgements and schedule toggles.
+- Restored successful `npm run build` execution by resolving TypeScript regressions, unblocking CI/CD, Playwright smoke tests, and design QA overlay verification on production bundles.
+- Documented the remediation path in Version 1.50 trackers so analytics feature squads and QA leads can trace the fix when reviewing release readiness.
